@@ -12,12 +12,14 @@
   header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
   .logo{font-size:24px;font-weight:700;color:var(--accent)}
   header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
-  .cart{max-width:700px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
-  h1{text-align:center;margin-bottom:20px}
-  .item{display:flex;justify-content:space-between;align-items:center;border-bottom:1px dashed var(--line);padding:10px 0}
-  .item:last-child{border-bottom:none}
-  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;padding:12px 24px;border-radius:10px;text-decoration:none;margin-top:20px;float:right;border:1px solid var(--accent-700)}
-  footer{text-align:center;color:var(--sub);font-size:14px;padding:16px;clear:both}
+  .wrap{max-width:900px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px}
+  h1{text-align:center;margin-bottom:24px}
+  table{width:100%;border-collapse:collapse;margin-bottom:20px}
+  th,td{padding:12px;border-bottom:1px solid var(--line);text-align:left}
+  th{color:var(--sub);font-weight:600}
+  .total{display:flex;justify-content:space-between;font-size:18px;font-weight:700;margin-top:10px}
+  .btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 18px;border-radius:8px;border:1px solid var(--accent-700);font-weight:600;text-decoration:none;float:right;margin-top:20px}
+  footer{text-align:center;color:var(--sub);font-size:14px;padding:16px}
 </style>
 </head>
 <body>
@@ -25,20 +27,24 @@
   <div class="logo">La Nonna</div>
   <nav>
     <a href="index.html">Inicio</a>
-    <a href="compras.html">Productos</a>
+    <a href="compras.html">Tienda</a>
     <a href="perfil.html">Perfil</a>
   </nav>
 </header>
 
-<div class="cart">
-  <h1>Tu Carrito</h1>
-  <div class="item"><span>Ravioles de Carne</span><strong>$10</strong></div>
-  <div class="item"><span>Ñoquis de Papa</span><strong>$8</strong></div>
-  <div class="item"><span>Subtotal</span><strong>$18</strong></div>
-  <a class="btn" href="checkout.html">Proceder al Pago</a>
+<div class="wrap">
+  <h1>Carrito de Compras</h1>
+  <table>
+    <tr><th>Producto</th><th>Cantidad</th><th>Precio</th></tr>
+    <tr><td>Ravioles de Carne</td><td>1</td><td>$6.490</td></tr>
+    <tr><td>Salsa Pomodoro</td><td>2</td><td>$6.580</td></tr>
+  </table>
+  <div class="total"><span>Total</span><span>$13.070</span></div>
+  <a href="checkout.html" class="btn">Proceder al pago</a>
 </div>
 
 <footer>© 2025 La Nonna</footer>
 </body>
 </html>
+
 
