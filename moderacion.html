@@ -1,59 +1,248 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>La Nonna • Moderación</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--accent:#3182ce;--accent-700:#2b6cb0;--bg:#f7fafc;--line:#e2e8f0;--text:#2d3748;--sub:#718096;--warn:#e53e3e;}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
-  header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
-  .logo{font-size:24px;font-weight:700;color:var(--accent)}
-  header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
-  .wrap{max-width:900px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px}
-  h1{text-align:center;margin-bottom:24px}
-  .comment{border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px;background:#fff}
-  .meta{font-size:13px;color:var(--sub);margin-bottom:6px}
-  .body{margin-bottom:8px}
-  .actions{display:flex;gap:10px}
-  .btn{flex:1;text-align:center;padding:10px;border-radius:8px;font-weight:600;border:1px solid var(--accent-700);cursor:pointer}
-  .btn.ok{background:var(--accent);color:#fff}
-  .btn.warn{background:#fff;border-color:var(--warn);color:var(--warn)}
-  footer{text-align:center;color:var(--sub);font-size:14px;padding:16px}
+:root{
+  --bg:#fefdf8;--text:#2d1b0e;--sub:#7a5c3c;--line:#e8d8c3;
+  --accent:#c41e3a;--accent-700:#9a1a2d;--card:#fffaf0;
+  --shadow:0 8px 32px rgba(196,30,58,0.08);--radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:var(--card);border-bottom:2px solid var(--line);padding:20px 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow)}
+.brand{font-size:28px;font-weight:700;color:var(--accent);letter-spacing:-0.5px}
+nav.menu{display:flex;gap:24px;align-items:center}
+nav.menu a{text-decoration:none;color:var(--text);font-weight:500;padding:8px 16px;border-radius:25px;transition:all 0.3s ease}
+nav.menu a:hover{background:var(--accent);color:white}
+.wrap{max-width:1000px;margin:40px auto;padding:0 20px}
+h1{text-align:center;margin-bottom:40px;color:var(--accent);font-size:2.2rem}
+.moderation-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-bottom:40px}
+.stat-card{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:20px;text-align:center;box-shadow:var(--shadow)}
+.stat-number{font-size:2rem;font-weight:700;color:var(--accent);display:block}
+.stat-label{color:var(--sub);font-size:0.9rem}
+.comment-list{display:flex;flex-direction:column;gap:20px}
+.comment-card{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:25px;box-shadow:var(--shadow)}
+.comment-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:15px;flex-wrap:wrap;gap:15px}
+.comment-meta{display:flex;align-items:center;gap:12px}
+.user-avatar{width:40px;height:40px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-weight:600}
+.user-info{display:flex;flex-direction:column}
+.user-name{font-weight:600}
+.product-name{color:var(--accent);font-size:0.9rem}
+.comment-date{color:var(--sub);font-size:0.9rem}
+.comment-rating{color:#fbbf24;font-size:1.1rem}
+.comment-text{color:var(--text);margin-bottom:20px;padding:15px;background:var(--bg);border-radius:8px;border-left:4px solid var(--accent)}
+.comment-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:10px 20px;border-radius:20px;font-weight:600;text-decoration:none;transition:all 0.3s ease;border:2px solid;cursor:pointer;font-size:0.9rem}
+.btn-approve{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-approve:hover{background:transparent;color:var(--accent)}
+.btn-reject{background:transparent;color:#ef4444;border-color:#ef4444}
+.btn-reject:hover{background:#ef4444;color:#fff}
+.btn-edit{background:transparent;color:var(--sub);border-color:var(--sub)}
+.btn-edit:hover{background:var(--sub);color:#fff}
+.pending-badge{background:#fef3c7;color:#92400e;padding:4px 12px;border-radius:12px;font-size:0.8rem;font-weight:600}
+footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px solid var(--line);text-align:center;color:var(--sub)}
+@media (max-width:768px){
+  header{padding:16px 20px;flex-direction:column;gap:16px}
+  nav.menu{gap:12px;flex-wrap:wrap;justify-content:center}
+  .comment-header{flex-direction:column;align-items:flex-start}
+  .comment-actions{justify-content:center}
+}
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">La Nonna</div>
-  <nav>
+  <div class="brand">🍝 La Nonna</div>
+  <nav class="menu">
     <a href="index.html">Inicio</a>
     <a href="valoraciones.html">Valoraciones</a>
-    <a href="perfil.html">Perfil</a>
+    <a href="perfil.html">Administración</a>
   </nav>
 </header>
 
 <div class="wrap">
   <h1>Moderación de Comentarios</h1>
-  <div class="comment">
-    <div class="meta">Producto: Lasaña de Pollo</div>
-    <div class="body">“Muy rica, pero llegó un poco fría.”</div>
-    <div class="actions">
-      <div class="btn warn">Eliminar</div>
-      <div class="btn ok">Aprobar</div>
+  
+  <div class="moderation-stats">
+    <div class="stat-card">
+      <span class="stat-number">12</span>
+      <span class="stat-label">Pendientes de revisión</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">247</span>
+      <span class="stat-label">Comentarios aprobados</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">8</span>
+      <span class="stat-label">Comentarios rechazados</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">4.8</span>
+      <span class="stat-label">Rating promedio</span>
     </div>
   </div>
-  <div class="comment">
-    <div class="meta">Producto: Ravioles de Verdura</div>
-    <div class="body">“Excelente calidad, recomiendo.”</div>
-    <div class="actions">
-      <div class="btn warn">Eliminar</div>
-      <div class="btn ok">Aprobar</div>
+
+  <div class="comment-list">
+    <div class="comment-card">
+      <div class="comment-header">
+        <div class="comment-meta">
+          <div class="user-avatar">MP</div>
+          <div class="user-info">
+            <div class="user-name">María Pérez</div>
+            <div class="product-name">Ravioles de Carne • 450g</div>
+            <div class="comment-date">Hace 2 días</div>
+          </div>
+        </div>
+        <div>
+          <div class="comment-rating">★★★★★</div>
+          <div class="pending-badge">PENDIENTE</div>
+        </div>
+      </div>
+      <div class="comment-text">
+        ¡Increíble sabor! Los ravioles son exactamente como los que preparaba mi abuela italiana. 
+        La masa perfecta y el relleno muy sabroso. Llegaron en perfecto estado y muy rápido.
+      </div>
+      <div class="comment-actions">
+        <button class="btn btn-approve" onclick="moderateComment(this, 'approved')">✓ Aprobar</button>
+        <button class="btn btn-reject" onclick="moderateComment(this, 'rejected')">✗ Rechazar</button>
+        <button class="btn btn-edit" onclick="editComment(this)">✏️ Editar</button>
+      </div>
+    </div>
+
+    <div class="comment-card">
+      <div class="comment-header">
+        <div class="comment-meta">
+          <div class="user-avatar">CR</div>
+          <div class="user-info">
+            <div class="user-name">Carlos Rodríguez</div>
+            <div class="product-name">Lasaña de Pollo</div>
+            <div class="comment-date">Hace 1 semana</div>
+          </div>
+        </div>
+        <div>
+          <div class="comment-rating">★★★★☆</div>
+          <div class="pending-badge">PENDIENTE</div>
+        </div>
+      </div>
+      <div class="comment-text">
+        Muy buena lasaña, cremosa y con mucho sabor. Solo le pongo 4 estrellas porque llegó 
+        un poco fría, pero el sabor era excelente. Volveré a pedir.
+      </div>
+      <div class="comment-actions">
+        <button class="btn btn-approve" onclick="moderateComment(this, 'approved')">✓ Aprobar</button>
+        <button class="btn btn-reject" onclick="moderateComment(this, 'rejected')">✗ Rechazar</button>
+        <button class="btn btn-edit" onclick="editComment(this)">✏️ Editar</button>
+      </div>
+    </div>
+
+    <div class="comment-card">
+      <div class="comment-header">
+        <div class="comment-meta">
+          <div class="user-avatar">JP</div>
+          <div class="user-info">
+            <div class="user-name">Juan Pérez</div>
+            <div class="product-name">Spaghetti Pomodoro</div>
+            <div class="comment-date">Hace 3 días</div>
+          </div>
+        </div>
+        <div>
+          <div class="comment-rating">★★★★★</div>
+          <div class="pending-badge">PENDIENTE</div>
+        </div>
+      </div>
+      <div class="comment-text">
+        Excelente servicio y comida deliciosa. La pasta estaba perfecta y la salsa muy sabrosa. 
+        Definitivamente volveré a ordenar. Recomendado 100%.
+      </div>
+      <div class="comment-actions">
+        <button class="btn btn-approve" onclick="moderateComment(this, 'approved')">✓ Aprobar</button>
+        <button class="btn btn-reject" onclick="moderateComment(this, 'rejected')">✗ Rechazar</button>
+        <button class="btn btn-edit" onclick="editComment(this)">✏️ Editar</button>
+      </div>
+    </div>
+
+    <div class="comment-card">
+      <div class="comment-header">
+        <div class="comment-meta">
+          <div class="user-avatar">AG</div>
+          <div class="user-info">
+            <div class="user-name">Ana González</div>
+            <div class="product-name">Ñoquis de Papa</div>
+            <div class="comment-date">Hace 5 días</div>
+          </div>
+        </div>
+        <div>
+          <div class="comment-rating">★★★☆☆</div>
+          <div class="pending-badge">PENDIENTE</div>
+        </div>
+      </div>
+      <div class="comment-text">
+        Los ñoquis estaban bien pero la salsa pomodoro tenía mucho ajo para mi gusto. 
+        El delivery llegó a tiempo y la presentación era buena.
+      </div>
+      <div class="comment-actions">
+        <button class="btn btn-approve" onclick="moderateComment(this, 'approved')">✓ Aprobar</button>
+        <button class="btn btn-reject" onclick="moderateComment(this, 'rejected')">✗ Rechazar</button>
+        <button class="btn btn-edit" onclick="editComment(this)">✏️ Editar</button>
+      </div>
     </div>
   </div>
 </div>
 
-<footer>© 2025 La Nonna</footer>
+<footer>
+  © 2025 La Nonna · Tradición italiana en cada plato · Todos los derechos reservados
+</footer>
+
+<script>
+function moderateComment(button, action) {
+  const commentCard = button.closest('.comment-card');
+  const pendingBadge = commentCard.querySelector('.pending-badge');
+  
+  if (action === 'approved') {
+    pendingBadge.textContent = 'APROBADO';
+    pendingBadge.style.background = '#dcfce7';
+    pendingBadge.style.color = '#166534';
+    commentCard.style.borderColor = '#22c55e';
+  } else {
+    pendingBadge.textContent = 'RECHAZADO';
+    pendingBadge.style.background = '#fee2e2';
+    pendingBadge.style.color = '#991b1b';
+    commentCard.style.borderColor = '#ef4444';
+  }
+  
+  commentCard.querySelector('.comment-actions').innerHTML = 
+    `<button class="btn btn-edit" onclick="undoModeration(this)">↶ Deshacer</button>`;
+}
+
+function editComment(button) {
+  const commentCard = button.closest('.comment-card');
+  const commentText = commentCard.querySelector('.comment-text');
+  const currentText = commentText.textContent.trim();
+  
+  const newText = prompt('Editar comentario:', currentText);
+  if (newText && newText !== currentText) {
+    commentText.textContent = newText;
+  }
+}
+
+function undoModeration(button) {
+  const commentCard = button.closest('.comment-card');
+  const pendingBadge = commentCard.querySelector('.pending-badge');
+  
+  pendingBadge.textContent = 'PENDIENTE';
+  pendingBadge.style.background = '#fef3c7';
+  pendingBadge.style.color = '#92400e';
+  commentCard.style.borderColor = 'var(--line)';
+  
+  commentCard.querySelector('.comment-actions').innerHTML = `
+    <button class="btn btn-approve" onclick="moderateComment(this, 'approved')">✓ Aprobar</button>
+    <button class="btn btn-reject" onclick="moderateComment(this, 'rejected')">✗ Rechazar</button>
+    <button class="btn btn-edit" onclick="editComment(this)">✏️ Editar</button>
+  `;
+}
+</script>
 </body>
 </html>
