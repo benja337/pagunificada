@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>La Nonna • Productos</title>
+<title>La Nonna • Tienda</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root{--accent:#3182ce;--accent-700:#2b6cb0;--bg:#f7fafc;--line:#e2e8f0;--text:#2d3748;--sub:#718096;}
@@ -12,13 +12,12 @@
   header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
   .logo{font-size:24px;font-weight:700;color:var(--accent)}
   header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
-  .grid{max-width:1100px;margin:40px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;padding:0 20px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.04);transition:transform .2s}
-  .card:hover{transform:translateY(-4px)}
-  .card img{width:100%;height:180px;object-fit:cover}
-  .card h3{font-size:18px;margin:12px}
-  .card p{color:var(--sub);font-size:14px;margin:0 12px 16px}
-  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;padding:10px 20px;border-radius:10px;text-decoration:none;border:1px solid var(--accent-700);margin:0 12px 16px}
+  .wrap{max-width:1100px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px}
+  h1{text-align:center;margin-bottom:24px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+  .card{border:1px solid var(--line);border-radius:12px;padding:16px;background:#f9fbff;text-align:center}
+  .img{height:180px;background:#edf2f7;border:1px solid var(--line);border-radius:8px;margin-bottom:12px;display:flex;align-items:center;justify-content:center;color:#a0aec0}
+  .btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 18px;border-radius:8px;border:1px solid var(--accent-700);font-weight:600;text-decoration:none}
   footer{text-align:center;color:var(--sub);font-size:14px;padding:16px}
 </style>
 </head>
@@ -27,33 +26,37 @@
   <div class="logo">La Nonna</div>
   <nav>
     <a href="index.html">Inicio</a>
-    <a href="carrito.html">Carrito</a>
     <a href="perfil.html">Perfil</a>
+    <a href="carrito.html">Carrito</a>
   </nav>
 </header>
 
-<section class="grid">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1601050690597-1b3e3c9e01a0?auto=format&fit=crop&w=800&q=80" alt="Ñoquis">
-    <h3>Ñoquis de Papa</h3>
-    <p>Livianos y suaves, perfectos con salsa de tomate.</p>
-    <a class="btn" href="carrito.html">Agregar al carrito</a>
+<div class="wrap">
+  <h1>Nuestros Productos</h1>
+  <div class="grid">
+    <div class="card">
+      <div class="img">Ravioles</div>
+      <h3>Ravioles de Carne</h3>
+      <p>$6.490</p>
+      <a href="producto.html" class="btn">Ver más</a>
+    </div>
+    <div class="card">
+      <div class="img">Lasaña</div>
+      <h3>Lasaña de Pollo</h3>
+      <p>$8.990</p>
+      <a href="producto.html" class="btn">Ver más</a>
+    </div>
+    <div class="card">
+      <div class="img">Salsa</div>
+      <h3>Salsa Pomodoro</h3>
+      <p>$3.290</p>
+      <a href="producto.html" class="btn">Ver más</a>
+    </div>
   </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1601924582971-b241fa178b53?auto=format&fit=crop&w=800&q=80" alt="Ravioles">
-    <h3>Ravioles de Carne</h3>
-    <p>Clásicos rellenos con carne y especias italianas.</p>
-    <a class="btn" href="carrito.html">Agregar al carrito</a>
-  </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1604908177524-4727d5a07b3f?auto=format&fit=crop&w=800&q=80" alt="Lasaña">
-    <h3>Lasaña de Pollo</h3>
-    <p>Jugosa, dorada, con queso fundido y salsa casera.</p>
-    <a class="btn" href="carrito.html">Agregar al carrito</a>
-  </div>
-</section>
+</div>
 
 <footer>© 2025 La Nonna</footer>
 </body>
 </html>
+
 
