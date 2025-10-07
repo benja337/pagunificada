@@ -1,41 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>La Nonna • Confirmación</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--accent:#3182ce;--accent-700:#2b6cb0;--bg:#f7fafc;--line:#e2e8f0;--text:#2d3748;--sub:#718096;}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
-  header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
-  .logo{font-size:24px;font-weight:700;color:var(--accent)}
-  header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
-  .confirm{max-width:600px;margin:80px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px;text-align:center}
-  h1{margin-bottom:16px}
-  p{color:var(--sub);margin-bottom:24px}
-  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;padding:12px 28px;border-radius:10px;text-decoration:none;border:1px solid var(--accent-700)}
-  footer{text-align:center;color:var(--sub);font-size:14px;padding:16px}
+:root{
+  --bg:#fefdf8;--text:#2d1b0e;--sub:#7a5c3c;--line:#e8d8c3;
+  --accent:#c41e3a;--accent-700:#9a1a2d;--card:#fffaf0;
+  --shadow:0 8px 32px rgba(196,30,58,0.08);--radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:var(--card);border-bottom:2px solid var(--line);padding:20px 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow)}
+.brand{font-size:28px;font-weight:700;color:var(--accent);letter-spacing:-0.5px}
+nav.menu{display:flex;gap:24px;align-items:center}
+nav.menu a{text-decoration:none;color:var(--text);font-weight:500;padding:8px 16px;border-radius:25px;transition:all 0.3s ease}
+nav.menu a:hover{background:var(--accent);color:white}
+.confirm{max-width:600px;margin:80px auto;background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:50px;text-align:center;box-shadow:var(--shadow)}
+.success-icon{font-size:4rem;margin-bottom:20px}
+h1{color:var(--accent);margin-bottom:20px;font-size:2.2rem}
+.confirm p{color:var(--sub);margin-bottom:30px;font-size:1.1rem}
+.order-info{background:var(--bg);border:2px solid var(--line);border-radius:12px;padding:20px;margin:30px 0}
+.order-number{font-size:1.3rem;font-weight:700;color:var(--accent)}
+.btn{display:inline-block;padding:16px 32px;background:var(--accent);color:#fff;border-radius:25px;font-weight:600;text-decoration:none;transition:all 0.3s ease;border:2px solid var(--accent);margin:10px}
+.btn:hover{background:transparent;color:var(--accent)}
+.btn-secondary{background:transparent;color:var(--accent)}
+footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px solid var(--line);text-align:center;color:var(--sub)}
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">La Nonna</div>
-  <nav>
+  <div class="brand">🍝 La Nonna</div>
+  <nav class="menu">
     <a href="index.html">Inicio</a>
     <a href="compras.html">Productos</a>
-    <a href="perfil.html">Perfil</a>
+    <a href="perfil.html">Mi Cuenta</a>
   </nav>
 </header>
 
 <div class="confirm">
-  <h1>¡Gracias por tu compra!</h1>
-  <p>Tu pedido ha sido confirmado y está siendo preparado con amor. Te notificaremos cuando esté en camino.</p>
-  <a class="btn" href="index.html">Volver al inicio</a>
+  <div class="success-icon">🎉</div>
+  <h1>¡Pedido Confirmado!</h1>
+  <p>Tu pedido ha sido procesado exitosamente y está siendo preparado con todo el amor de la Nonna.</p>
+  
+  <div class="order-info">
+    <div class="order-number" id="order-number">ORD-10245</div>
+    <p>Recibirás un correo de confirmación con los detalles de tu pedido.</p>
+  </div>
+  
+  <div>
+    <a href="seguimiento.html" class="btn">Seguir Mi Pedido</a>
+    <a href="index.html" class="btn btn-secondary">Volver al Inicio</a>
+  </div>
 </div>
 
-<footer>© 2025 La Nonna</footer>
+<footer>
+  © 2025 La Nonna · Tradición italiana en cada plato · Todos los derechos reservados
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const order = JSON.parse(localStorage.getItem('currentOrder'));
+  if (order) {
+    document.getElementById('order-number').textContent = order.id;
+  }
+});
+</script>
 </body>
 </html>
 
