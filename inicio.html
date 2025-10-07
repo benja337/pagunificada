@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Nonna - Inicio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#fffaf7;--text:#2d3748;--sub:#718096;--line:#e2e8f0;--accent:#c53030;--accent-700:#9b2c2c}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text)}
+  header{display:flex;justify-content:space-between;align-items:center;padding:20px 10%;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+  header h1{font-size:28px;font-weight:700;color:var(--accent)}
+  nav a{margin:0 12px;text-decoration:none;color:var(--text);font-weight:600;transition:.2s}
+  nav a:hover{color:var(--accent)}
+  .hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:60px 10%;gap:40px}
+  .hero img{width:100%;border-radius:20px;box-shadow:0 8px 24px rgba(0,0,0,.1)}
+  .hero-content h2{font-size:40px;margin-bottom:20px;color:#1a202c}
+  .hero-content p{color:var(--sub);font-size:16px;margin-bottom:30px}
+  .btn{background:var(--accent);color:#fff;padding:14px 26px;border:none;border-radius:10px;font-weight:600;cursor:pointer;transition:.2s}
+  .btn:hover{background:var(--accent-700)}
+  footer{background:#fff;border-top:1px solid var(--line);text-align:center;padding:20px;color:var(--sub);font-size:14px;margin-top:60px}
+  @media(max-width:900px){.hero{grid-template-columns:1fr;text-align:center}.hero img{order:-1}}
+</style>
+</head>
+<body>
+<header>
+  <h1>La Nonna</h1>
+  <nav>
+    <a href="inicio.html">Inicio</a>
+    <a href="compras.html">Compra</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="login.html" class="btn" style="padding:8px 18px;">Iniciar sesión</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2>Sabores auténticos, como en casa</h2>
+    <p>Descubre nuestros ravioles, lasañas y salsas artesanales elaboradas con recetas familiares italianas.</p>
+    <a href="compras.html"><button class="btn">Hacer un pedido</button></a>
+  </div>
+  <img src="https://images.unsplash.com/photo-1604908812919-3f4d8a3a2c5a?auto=format&fit=crop&w=900&q=60" alt="Pasta italiana">
+</section>
+
+<footer>© 2025 La Nonna. Todos los derechos reservados.</footer>
+</body>
+</html>
