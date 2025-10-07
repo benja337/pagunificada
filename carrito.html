@@ -3,69 +3,42 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>La Nonna - Carrito</title>
+<title>La Nonna • Carrito</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#fffaf7;--text:#2d3748;--sub:#718096;--line:#e2e8f0;--accent:#c53030;--accent-700:#9b2c2c}
+  :root{--accent:#3182ce;--accent-700:#2b6cb0;--bg:#f7fafc;--line:#e2e8f0;--text:#2d3748;--sub:#718096;}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);font-family:Inter,sans-serif;color:var(--text)}
-  header{display:flex;justify-content:space-between;align-items:center;padding:20px 10%;background:#fff;border-bottom:1px solid var(--line)}
-  header h1{font-size:26px;font-weight:700;color:var(--accent)}
-  nav a{margin:0 10px;text-decoration:none;color:var(--text);font-weight:600}
-  nav a:hover{color:var(--accent)}
-  main{padding:60px 10%;display:grid;grid-template-columns:2fr 1fr;gap:40px}
-  table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.05)}
-  th,td{padding:14px 12px;text-align:left;border-bottom:1px solid var(--line)}
-  th{background:#f9f9f9;color:#4a5568}
-  td img{width:60px;border-radius:8px;margin-right:10px;vertical-align:middle}
-  .total{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.05)}
-  .total h2{font-size:20px;margin-bottom:10px}
-  .btn{background:var(--accent);color:#fff;border:none;padding:12px 22px;border-radius:10px;font-weight:600;width:100%;cursor:pointer;margin-top:10px}
-  .btn:hover{background:var(--accent-700)}
-  footer{text-align:center;padding:20px;color:var(--sub);border-top:1px solid var(--line);background:#fff;margin-top:40px}
-  @media(max-width:900px){main{grid-template-columns:1fr}}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
+  header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-size:24px;font-weight:700;color:var(--accent)}
+  header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
+  .cart{max-width:700px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+  h1{text-align:center;margin-bottom:20px}
+  .item{display:flex;justify-content:space-between;align-items:center;border-bottom:1px dashed var(--line);padding:10px 0}
+  .item:last-child{border-bottom:none}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;padding:12px 24px;border-radius:10px;text-decoration:none;margin-top:20px;float:right;border:1px solid var(--accent-700)}
+  footer{text-align:center;color:var(--sub);font-size:14px;padding:16px;clear:both}
 </style>
 </head>
 <body>
 <header>
-  <h1>La Nonna</h1>
+  <div class="logo">La Nonna</div>
   <nav>
-    <a href="inicio.html">Inicio</a>
-    <a href="compras.html">Compras</a>
-    <a href="carrito.html">Carrito</a>
+    <a href="index.html">Inicio</a>
+    <a href="compras.html">Productos</a>
+    <a href="perfil.html">Perfil</a>
   </nav>
 </header>
 
-<main>
-  <table>
-    <thead>
-      <tr><th>Producto</th><th>Cantidad</th><th>Precio</th><th>Total</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=100&q=60" alt="">Ravioles de carne</td>
-        <td>1</td>
-        <td>$6.490</td>
-        <td>$6.490</td>
-      </tr>
-      <tr>
-        <td><img src="https://images.unsplash.com/photo-1589308078051-dc3d59d1f5f4?auto=format&fit=crop&w=100&q=60" alt="">Lasaña boloñesa</td>
-        <td>2</td>
-        <td>$8.990</td>
-        <td>$17.980</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="cart">
+  <h1>Tu Carrito</h1>
+  <div class="item"><span>Ravioles de Carne</span><strong>$10</strong></div>
+  <div class="item"><span>Ñoquis de Papa</span><strong>$8</strong></div>
+  <div class="item"><span>Subtotal</span><strong>$18</strong></div>
+  <a class="btn" href="checkout.html">Proceder al Pago</a>
+</div>
 
-  <div class="total">
-    <h2>Resumen</h2>
-    <p>Subtotal: <strong>$24.470</strong></p>
-    <p>Envío: <strong>$2.000</strong></p>
-    <p>Total: <strong>$26.470</strong></p>
-    <button class="btn" onclick="window.location.href='checkout.html'">Proceder al pago</button>
-  </div>
-</main>
-
-<footer>© 2025 La Nonna - Tu pedido con amor</footer>
+<footer>© 2025 La Nonna</footer>
 </body>
 </html>
+
