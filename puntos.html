@@ -1,40 +1,169 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>La Nonna • Puntos</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--accent:#3182ce;--accent-700:#2b6cb0;--bg:#f7fafc;--line:#e2e8f0;--text:#2d3748;--sub:#718096;}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
-  header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
-  .logo{font-size:24px;font-weight:700;color:var(--accent)}
-  header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
-  .wrap{max-width:700px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px;text-align:center}
-  h1{margin-bottom:16px}
-  .points{font-size:40px;font-weight:700;color:var(--accent);margin-bottom:20px}
-  .btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 28px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid var(--accent-700)}
-  footer{text-align:center;color:var(--sub);font-size:14px;padding:16px}
+:root{
+  --bg:#fefdf8;--text:#2d1b0e;--sub:#7a5c3c;--line:#e8d8c3;
+  --accent:#c41e3a;--accent-700:#9a1a2d;--card:#fffaf0;
+  --shadow:0 8px 32px rgba(196,30,58,0.08);--radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:var(--card);border-bottom:2px solid var(--line);padding:20px 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow)}
+.brand{font-size:28px;font-weight:700;color:var(--accent);letter-spacing:-0.5px}
+nav.menu{display:flex;gap:24px;align-items:center}
+nav.menu a{text-decoration:none;color:var(--text);font-weight:500;padding:8px 16px;border-radius:25px;transition:all 0.3s ease}
+nav.menu a:hover{background:var(--accent);color:white}
+.wrap{max-width:800px;margin:40px auto;padding:0 20px}
+h1{text-align:center;margin-bottom:40px;color:var(--accent);font-size:2.2rem}
+.points-display{text-align:center;margin-bottom:50px}
+.points-circle{width:150px;height:150px;border-radius:50%;background:var(--accent);color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 20px;border:6px solid #ffd700}
+.points-number{font-size:2.5rem;font-weight:700;line-height:1}
+.points-label{font-size:1rem;opacity:0.9}
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin-bottom:40px}
+.benefit-card{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:25px;text-align:center;transition:all 0.3s ease;box-shadow:var(--shadow)}
+.benefit-card:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(196,30,58,0.15)}
+.benefit-icon{font-size:3rem;margin-bottom:15px}
+.benefit-card h3{color:var(--accent);margin-bottom:10px;font-size:1.3rem}
+.benefit-card p{color:var(--sub);margin-bottom:15px}
+.benefit-points{font-weight:700;color:var(--accent);font-size:1.1rem}
+.how-it-works{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:30px;margin-bottom:30px}
+.how-it-works h2{color:var(--accent);margin-bottom:20px;text-align:center}
+.steps{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px}
+.step{text-align:center;flex:1;min-width:150px}
+.step-number{width:40px;height:40px;background:var(--accent);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-weight:700}
+.btn{display:inline-block;padding:14px 28px;background:var(--accent);color:#fff;border-radius:25px;font-weight:600;text-decoration:none;transition:all 0.3s ease;border:2px solid var(--accent);text-align:center;margin:10px}
+.btn:hover{background:transparent;color:var(--accent)}
+.btn-large{font-size:1.1rem;padding:16px 32px}
+.actions{text-align:center;margin-top:40px}
+footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px solid var(--line);text-align:center;color:var(--sub)}
+@media (max-width:768px){
+  header{padding:16px 20px;flex-direction:column;gap:16px}
+  nav.menu{gap:12px;flex-wrap:wrap;justify-content:center}
+  .steps{flex-direction:column;gap:15px}
+  .benefits-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">La Nonna</div>
-  <nav>
+  <div class="brand">🍝 La Nonna</div>
+  <nav class="menu">
     <a href="index.html">Inicio</a>
-    <a href="perfil.html">Perfil</a>
-    <a href="compras.html">Productos</a>
+    <a href="perfil.html">Mi Perfil</a>
+    <a href="cupones.html">Cupones</a>
   </nav>
 </header>
 
 <div class="wrap">
-  <h1>Tus Puntos</h1>
-  <div class="points">125</div>
-  <a href="compras.html" class="btn">Canjear puntos</a>
+  <h1>Mis Puntos La Nonna</h1>
+  
+  <div class="points-display">
+    <div class="points-circle">
+      <div class="points-number" id="user-points">225</div>
+      <div class="points-label">PUNTOS</div>
+    </div>
+    <h2>¡Sigue acumulando puntos!</h2>
+    <p>Cada $1.000 gastado = 10 puntos</p>
+  </div>
+
+  <div class="how-it-works">
+    <h2>¿Cómo funcionan los puntos?</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <strong>Compra</strong>
+        <p>Realiza tus pedidos</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <strong>Acumula</strong>
+        <p>Gana puntos en cada compra</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <strong>Canjea</strong>
+        <p>Usa tus puntos en beneficios</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">🍝</div>
+      <h3>Plato Gratis</h3>
+      <p>Canjea cualquier plato de nuestro menú</p>
+      <div class="benefit-points">100 puntos</div>
+      <button class="btn" onclick="redeemPoints(100)">Canjear</button>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="benefit-icon">🥤</div>
+      <h3>Bebida Gratis</h3>
+      <p>Elige cualquier bebida de la casa</p>
+      <div class="benefit-points">50 puntos</div>
+      <button class="btn" onclick="redeemPoints(50)">Canjear</button>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="benefit-icon">🎁</div>
+      <h3>Descuento 15%</h3>
+      <p>15% de descuento en tu próxima compra</p>
+      <div class="benefit-points">75 puntos</div>
+      <button class="btn" onclick="redeemPoints(75)">Canjear</button>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="benefit-icon">🍮</div>
+      <h3>Postre Sorpresa</h3>
+      <p>Postre de la casa de regalo</p>
+      <div class="benefit-points">60 puntos</div>
+      <button class="btn" onclick="redeemPoints(60)">Canjear</button>
+    </div>
+  </div>
+
+  <div class="actions">
+    <a href="compras.html" class="btn btn-large">🛒 Seguir Comprando</a>
+    <a href="historial.html" class="btn btn-large">📦 Ver Mis Pedidos</a>
+  </div>
 </div>
 
-<footer>© 2025 La Nonna</footer>
+<footer>
+  © 2025 La Nonna · Tradición italiana en cada plato · Todos los derechos reservados
+</footer>
+
+<script>
+function loadPoints() {
+  const user = JSON.parse(localStorage.getItem('user'));
+  if (user && user.points) {
+    document.getElementById('user-points').textContent = user.points;
+  }
+}
+
+function redeemPoints(pointsRequired) {
+  const user = JSON.parse(localStorage.getItem('user'));
+  if (!user) {
+    alert('Debes iniciar sesión para canjear puntos');
+    return;
+  }
+  
+  const currentPoints = user.points || 0;
+  
+  if (currentPoints >= pointsRequired) {
+    user.points = currentPoints - pointsRequired;
+    localStorage.setItem('user', JSON.stringify(user));
+    document.getElementById('user-points').textContent = user.points;
+    alert(`¡Felicidades! Has canjeado ${pointsRequired} puntos.`);
+  } else {
+    alert(`Necesitas ${pointsRequired - currentPoints} puntos más para este beneficio.`);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', loadPoints);
+</script>
 </body>
 </html>
