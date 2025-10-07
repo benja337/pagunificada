@@ -19,15 +19,17 @@ nav.menu{display:flex;gap:24px;align-items:center}
 nav.menu a{text-decoration:none;color:var(--text);font-weight:500;padding:8px 16px;border-radius:25px;transition:all 0.3s ease}
 nav.menu a:hover{background:var(--accent);color:white}
 .wrap{max-width:1000px;margin:40px auto;padding:0 20px}
-h1{text-align:center;margin-bottom:40px;color:var(--accent);font-size:2.5rem}
+h1{text-align:center;margin-bottom:40px;color:var(--accent);font-size:2.2rem}
 .cart-items{margin-bottom:30px}
-.cart-item{display:grid;grid-template-columns:100px 1fr auto auto;gap:20px;align-items:center;padding:20px;border:2px solid var(--line);border-radius:var(--radius);margin-bottom:16px;background:var(--card)}
-.cart-item img{width:100px;height:80px;object-fit:cover;border-radius:8px}
+.cart-item{display:grid;grid-template-columns:80px 1fr auto auto auto;gap:15px;align-items:center;padding:20px;border:2px solid var(--line);border-radius:var(--radius);margin-bottom:16px;background:var(--card)}
+.cart-item img{width:80px;height:80px;object-fit:cover;border-radius:8px}
 .item-details h3{margin:0 0 8px;font-size:1.1rem}
-.item-price{font-weight:600;color:var(--accent);text-align:center}
-.quantity-controls{display:flex;align-items:center;gap:12px}
-.quantity-controls button{width:30px;height:30px;border:1px solid var(--accent);background:transparent;border-radius:50%;cursor:pointer;color:var(--accent)}
-.remove-btn{color:#dc2626;border:1px solid #dc2626;background:transparent;padding:8px 16px;border-radius:20px;cursor:pointer;font-size:0.9rem}
+.item-details p{color:var(--sub);margin:0;font-size:0.9rem}
+.item-price{font-weight:600;color:var(--accent);text-align:center;min-width:80px}
+.quantity-controls{display:flex;align-items:center;gap:12px;justify-content:center}
+.quantity-controls button{width:32px;height:32px;border:1px solid var(--accent);background:transparent;border-radius:50%;cursor:pointer;color:var(--accent);font-size:1rem;display:flex;align-items:center;justify-content:center}
+.quantity-controls span{font-size:1rem;font-weight:600;min-width:30px;text-align:center}
+.remove-btn{padding:8px 16px;background:transparent;color:#dc2626;border:1px solid #dc2626;border-radius:20px;cursor:pointer;font-size:0.9rem;transition:all 0.3s ease;white-space:nowrap}
 .remove-btn:hover{background:#dc2626;color:white}
 .cart-summary{border:2px solid var(--line);border-radius:var(--radius);padding:30px;background:var(--card)}
 .summary-row{display:flex;justify-content:space-between;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--line)}
@@ -41,8 +43,11 @@ footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px s
 @media (max-width:768px){
   header{padding:16px 20px;flex-direction:column;gap:16px}
   nav.menu{gap:12px;flex-wrap:wrap;justify-content:center}
-  .cart-item{grid-template-columns:80px 1fr;gap:12px}
-  .item-price,.quantity-controls{grid-column:1/-1}
+  .cart-item{grid-template-columns:60px 1fr auto;gap:10px;padding:15px}
+  .item-price,.quantity-controls,.remove-btn{grid-column:2/4;justify-self:start;margin-top:8px}
+  .quantity-controls{order:1}
+  .item-price{order:2}
+  .remove-btn{order:3}
 }
 </style>
 </head>
@@ -66,7 +71,7 @@ footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px s
     <div class="empty-cart">
       <h2>Tu carrito está vacío</h2>
       <p>Descubre nuestras deliciosas pastas artesanales</p>
-      <a href="compras.html" class="btn" style="width:auto">Explorar Productos</a>
+      <a href="compras.html" class="btn" style="width:auto;display:inline-block;padding:12px 24px">Explorar Productos</a>
     </div>
   </div>
 </div>
@@ -81,7 +86,7 @@ function loadCart() {
   const cartContainer = document.getElementById('cart-container');
   const cartCount = document.getElementById('cart-count');
   
-  cartCount.textContent = cart.length;
+  cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
   
   if (cart.length === 0) {
     return;
@@ -95,17 +100,18 @@ function loadCart() {
         total += itemTotal;
         return `
           <div class="cart-item">
-            <img src="${item.image}" alt="${item.name}">
+            <img src="${item.image}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?auto=format&fit=crop&w=200&q=80'">
             <div class="item-details">
               <h3>${item.name}</h3>
+              <p>Precio unitario: $${item.price.toLocaleString()}</p>
             </div>
             <div class="item-price">$${item.price.toLocaleString()}</div>
             <div class="quantity-controls">
               <button onclick="updateCartItem(${index}, -1)">-</button>
               <span>${item.quantity}</span>
               <button onclick="updateCartItem(${index}, 1)">+</button>
-              <button class="remove-btn" onclick="removeFromCart(${index})">Eliminar</button>
             </div>
+            <button class="remove-btn" onclick="removeFromCart(${index})">Eliminar</button>
           </div>
         `;
       }).join('')}
