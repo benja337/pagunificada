@@ -1,47 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>La Nonna • Producto</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--accent:#3182ce;--accent-700:#2b6cb0;--bg:#f7fafc;--line:#e2e8f0;--text:#2d3748;--sub:#718096;}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
-  header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
-  .logo{font-size:24px;font-weight:700;color:var(--accent)}
-  header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
-  .wrap{max-width:1000px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  .img{background:#edf2f7;border:1px solid var(--line);border-radius:12px;height:320px;display:flex;align-items:center;justify-content:center;color:#a0aec0;font-size:18px}
-  h1{margin-bottom:12px}
-  p{color:var(--sub);margin-bottom:20px}
-  .price{font-size:22px;font-weight:700;margin-bottom:16px}
-  .btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 20px;border-radius:8px;border:1px solid var(--accent-700);font-weight:600;text-decoration:none}
-  footer{text-align:center;color:var(--sub);font-size:14px;padding:16px}
+:root{
+  --bg:#fefdf8;--text:#2d1b0e;--sub:#7a5c3c;--line:#e8d8c3;
+  --accent:#c41e3a;--accent-700:#9a1a2d;--card:#fffaf0;
+  --shadow:0 8px 32px rgba(196,30,58,0.08);--radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:var(--card);border-bottom:2px solid var(--line);padding:20px 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow)}
+.brand{font-size:28px;font-weight:700;color:var(--accent);letter-spacing:-0.5px}
+nav.menu{display:flex;gap:24px;align-items:center}
+nav.menu a{text-decoration:none;color:var(--text);font-weight:500;padding:8px 16px;border-radius:25px;transition:all 0.3s ease}
+nav.menu a:hover{background:var(--accent);color:white}
+.wrap{max-width:1000px;margin:40px auto;padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.product-image{width:100%;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.product-image img{width:100%;height:400px;object-fit:cover;display:block}
+.product-info h1{font-size:2rem;margin-bottom:16px;color:var(--accent)}
+.product-info .description{color:var(--sub);margin-bottom:24px;font-size:1.1rem}
+.product-info .price{font-size:2rem;font-weight:700;color:var(--accent);margin-bottom:24px}
+.quantity-selector{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+.quantity-selector button{width:40px;height:40px;border:2px solid var(--accent);background:transparent;border-radius:50%;font-size:1.2rem;cursor:pointer;color:var(--accent)}
+.quantity-selector span{font-size:1.2rem;font-weight:600;min-width:40px;text-align:center}
+.btn{display:inline-block;padding:16px 32px;background:var(--accent);color:#fff;border-radius:25px;font-weight:600;text-decoration:none;transition:all 0.3s ease;border:2px solid var(--accent);text-align:center;cursor:pointer}
+.btn:hover{background:transparent;color:var(--accent)}
+.btn-large{width:100%;font-size:1.1rem}
+footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px solid var(--line);text-align:center;color:var(--sub)}
+@media (max-width:768px){
+  header{padding:16px 20px;flex-direction:column;gap:16px}
+  nav.menu{gap:12px;flex-wrap:wrap;justify-content:center}
+  .wrap{grid-template-columns:1fr;gap:20px}
+  .product-image img{height:300px}
+}
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">La Nonna</div>
-  <nav>
+  <div class="brand">🍝 La Nonna</div>
+  <nav class="menu">
     <a href="index.html">Inicio</a>
-    <a href="compras.html">Tienda</a>
-    <a href="carrito.html">Carrito</a>
+    <a href="compras.html">Productos</a>
+    <a href="promociones.html">Promociones</a>
+    <a href="reservas.html">Reservas</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="carrito.html">🛒 Carrito</a>
   </nav>
 </header>
 
 <div class="wrap">
-  <div class="img">Imagen del producto</div>
-  <div>
+  <div class="product-image">
+    <img src="https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?auto=format&fit=crop&w=800&q=80" alt="Ravioles de Carne La Nonna">
+  </div>
+  <div class="product-info">
     <h1>Ravioles de Carne • 450g</h1>
-    <p>Ravioles artesanales rellenos con carne seleccionada y especias. Ideales para acompañar con nuestras salsas caseras.</p>
+    <p class="description">Nuestros ravioles artesanales rellenos con una mezcla premium de carnes seleccionadas y especias de la Nonna. Masa casera elaborada con harina 000 y huevos frescos, cocidos al punto perfecto para mantener su textura y sabor.</p>
     <div class="price">$6.490</div>
-    <a href="carrito.html" class="btn">Agregar al carrito</a>
+    <div class="quantity-selector">
+      <button onclick="updateQuantity(-1)">-</button>
+      <span id="quantity">1</span>
+      <button onclick="updateQuantity(1)">+</button>
+    </div>
+    <button class="btn btn-large" onclick="addToCart()">Agregar al Carrito - $6.490</button>
   </div>
 </div>
 
-<footer>© 2025 La Nonna</footer>
+<footer>
+  © 2025 La Nonna · Tradición italiana en cada plato · Todos los derechos reservados
+</footer>
+
+<script>
+let quantity = 1;
+const price = 6490;
+
+function updateQuantity(change) {
+  quantity = Math.max(1, quantity + change);
+  document.getElementById('quantity').textContent = quantity;
+  document.querySelector('.btn-large').textContent = `Agregar al Carrito - $${(price * quantity).toLocaleString()}`;
+}
+
+function addToCart() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const product = {
+    id: 1,
+    name: 'Ravioles de Carne • 450g',
+    price: price,
+    quantity: quantity,
+    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?auto=format&fit=crop&w=200&q=80'
+  };
+  cart.push(product);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  window.location.href = 'carrito.html';
+}
+</script>
 </body>
 </html>
 
