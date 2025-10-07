@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Nonna • Moderación</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--accent:#3182ce;--accent-700:#2b6cb0;--bg:#f7fafc;--line:#e2e8f0;--text:#2d3748;--sub:#718096;--warn:#e53e3e;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
+  header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-size:24px;font-weight:700;color:var(--accent)}
+  header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
+  .wrap{max-width:900px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px}
+  h1{text-align:center;margin-bottom:24px}
+  .comment{border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px;background:#fff}
+  .meta{font-size:13px;color:var(--sub);margin-bottom:6px}
+  .body{margin-bottom:8px}
+  .actions{display:flex;gap:10px}
+  .btn{flex:1;text-align:center;padding:10px;border-radius:8px;font-weight:600;border:1px solid var(--accent-700);cursor:pointer}
+  .btn.ok{background:var(--accent);color:#fff}
+  .btn.warn{background:#fff;border-color:var(--warn);color:var(--warn)}
+  footer{text-align:center;color:var(--sub);font-size:14px;padding:16px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">La Nonna</div>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="valoraciones.html">Valoraciones</a>
+    <a href="perfil.html">Perfil</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <h1>Moderación de Comentarios</h1>
+  <div class="comment">
+    <div class="meta">Producto: Lasaña de Pollo</div>
+    <div class="body">“Muy rica, pero llegó un poco fría.”</div>
+    <div class="actions">
+      <div class="btn warn">Eliminar</div>
+      <div class="btn ok">Aprobar</div>
+    </div>
+  </div>
+  <div class="comment">
+    <div class="meta">Producto: Ravioles de Verdura</div>
+    <div class="body">“Excelente calidad, recomiendo.”</div>
+    <div class="actions">
+      <div class="btn warn">Eliminar</div>
+      <div class="btn ok">Aprobar</div>
+    </div>
+  </div>
+</div>
+
+<footer>© 2025 La Nonna</footer>
+</body>
+</html>
