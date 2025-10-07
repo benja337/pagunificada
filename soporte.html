@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Nonna • Soporte</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--accent:#3182ce;--accent-700:#2b6cb0;--bg:#f7fafc;--line:#e2e8f0;--text:#2d3748;--sub:#718096;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
+  header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-size:24px;font-weight:700;color:var(--accent)}
+  header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
+  .wrap{max-width:900px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px}
+  h1{text-align:center;margin-bottom:24px}
+  .chat{border:1px solid var(--line);border-radius:12px;padding:16px;height:300px;overflow:auto;margin-bottom:16px;background:#f9fbff}
+  .inputbar{display:flex;gap:8px}
+  input{flex:1;border:1px solid var(--line);border-radius:8px;padding:10px}
+  button{padding:10px 16px;border-radius:8px;background:var(--accent);color:#fff;font-weight:600;border:1px solid var(--accent-700)}
+  footer{text-align:center;color:var(--sub);font-size:14px;padding:16px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">La Nonna</div>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="perfil.html">Perfil</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <h1>Chat de Soporte</h1>
+  <div class="chat">
+    <p><strong>Cliente:</strong> Hola, necesito ayuda con mi pedido.</p>
+    <p><strong>Soporte:</strong> Claro, ¿podrías indicarme tu número de pedido?</p>
+  </div>
+  <div class="inputbar">
+    <input type="text" placeholder="Escribe tu mensaje...">
+    <button>Enviar</button>
+  </div>
+</div>
+
+<footer>© 2025 La Nonna</footer>
+</body>
+</html>
