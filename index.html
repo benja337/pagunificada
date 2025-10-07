@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Nonna · Inicio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8fafc;--card:#fff;--ink:#0f172a;--mut:#64748b;--brand:#2563eb;--alt:#0ea5e9}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+a{text-decoration:none;color:var(--brand)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px;background:var(--brand);color:#fff;font-weight:700}
+.btn.alt{background:var(--alt)}
+.topbar{position:sticky;top:0;z-index:10;display:flex;gap:16px;align-items:center;justify-content:space-between;background:#ffffffcc;backdrop-filter:blur(8px);padding:12px 16px;border-bottom:1px solid #e5e7eb}
+.brand{font-weight:800}
+.nav a{margin:0 8px;padding:8px 10px;border-radius:10px}
+.nav a:hover{background:#e5e7eb}
+.container{max-width:1100px;margin:0 auto;padding:24px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+.hero-card{background:var(--card);border-radius:20px;padding:22px;box-shadow:0 1px 2px rgba(2,6,23,.08)}
+.grid{display:grid;gap:18px}
+.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{background:var(--card);border-radius:16px;box-shadow:0 1px 2px rgba(2,6,23,.06);padding:16px}
+.price{font-weight:700}
+.small{color:var(--mut);font-size:14px}
+footer{margin-top:40px;padding:20px;border-top:1px solid #e5e7eb;background:#fff}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="topbar">
+<div class="brand">La Nonna</div>
+<nav class="nav">
+<a href="pages/catalogo.html">Catálogo</a>
+<a href="pages/carrito.html">Carrito</a>
+<a href="pages/login.html">Iniciar sesión</a>
+</nav>
+</div>
+
+<main class="container">
+<section class="hero">
+<div>
+<h1>Pastas frescas, hechas a mano</h1>
+<p class="small">Ravioles, lasañas y salsas artesanales. Compra online y recibe en tu casa.</p>
+<div style="display:flex;gap:10px;margin-top:10px">
+<a class="btn" href="pages/catalogo.html">Ver catálogo</a>
+<a class="btn alt" href="pages/login.html">Iniciar sesión</a>
+</div>
+</div>
+<div class="hero-card">
+<img alt="pasta" style="width:100%;border-radius:16px" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='600'><rect width='900' height='600' rx='24' fill='%23dcfce7'/><text x='450' y='320' font-family='Arial' font-size='42' text-anchor='middle' fill='%230f172a'>Pasta fresca todos los días</text></svg>">
+</div>
+</section>
+
+<section style="margin-top:24px">
+<h2>Destacados</h2>
+<div class="grid grid-3">
+<div class="card">
+<img alt="ravioles" style="width:100%;border-radius:12px" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='700' height='400'><rect width='700' height='400' rx='20' fill='%23dbeafe'/><text x='350' y='215' font-family='Arial' font-size='28' text-anchor='middle' fill='%230f172a'>Ravioles de Carne • 450g</text></svg>">
+<p class="price">$6.490</p>
+<p class="small">En stock</p>
+<div style="display:flex;gap:8px"><a class="btn" href="pages/producto.html">Ver</a><a class="btn alt" href="pages/carrito.html">Agregar</a></div>
+</div>
+<div class="card">
+<img alt="lasaña" style="width:100%;border-radius:12px" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='700' height='400'><rect width='700' height='400' rx='20' fill='%23fee2e2'/><text x='350' y='215' font-family='Arial' font-size='28' text-anchor='middle' fill='%230f172a'>Lasaña de Pollo • 520g</text></svg>">
+<p class="price">$8.990</p>
+<p class="small">Últimas unidades</p>
+<div style="display:flex;gap:8px"><a class="btn" href="pages/producto.html">Ver</a><a class="btn alt" href="pages/carrito.html">Agregar</a></div>
+</div>
+<div class="card">
+<img alt="ñoquis" style="width:100%;border-radius:12px" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='700' height='400'><rect width='700' height='400' rx='20' fill='%23fde68a'/><text x='350' y='215' font-family='Arial' font-size='28' text-anchor='middle' fill='%230f172a'>Ñoquis de Papa • 500g</text></svg>">
+<p class="price">$5.990</p>
+<p class="small">Disponible</p>
+<div style="display:flex;gap:8px"><a class="btn" href="pages/producto.html">Ver</a><a class="btn alt" href="pages/carrito.html">Agregar</a></div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div>© 2025 La Nonna</div>
+<div style="display:flex;gap:12px">
+<a href="pages/login.html">Acceder</a>
+<a href="pages/checkout.html">Checkout</a>
+<a href="pages/admin.html">Administración</a>
+</div>
+</footer>
+</body>
+</html>
