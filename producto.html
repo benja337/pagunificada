@@ -12,10 +12,12 @@
   header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
   .logo{font-size:24px;font-weight:700;color:var(--accent)}
   header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
-  .wrap{max-width:900px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px}
-  .img{height:240px;background:#edf2f7;border:1px solid var(--line);border-radius:12px;margin-bottom:20px;display:flex;align-items:center;justify-content:center;color:#a0aec0;font-weight:600}
-  .info{margin-bottom:16px}
-  .btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 28px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid var(--accent-700)}
+  .wrap{max-width:1000px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .img{background:#edf2f7;border:1px solid var(--line);border-radius:12px;height:320px;display:flex;align-items:center;justify-content:center;color:#a0aec0;font-size:18px}
+  h1{margin-bottom:12px}
+  p{color:var(--sub);margin-bottom:20px}
+  .price{font-size:22px;font-weight:700;margin-bottom:16px}
+  .btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 20px;border-radius:8px;border:1px solid var(--accent-700);font-weight:600;text-decoration:none}
   footer{text-align:center;color:var(--sub);font-size:14px;padding:16px}
 </style>
 </head>
@@ -24,21 +26,22 @@
   <div class="logo">La Nonna</div>
   <nav>
     <a href="index.html">Inicio</a>
-    <a href="compras.html">Productos</a>
-    <a href="perfil.html">Perfil</a>
+    <a href="compras.html">Tienda</a>
+    <a href="carrito.html">Carrito</a>
   </nav>
 </header>
 
 <div class="wrap">
   <div class="img">Imagen del producto</div>
-  <div class="info">
-    <h2>Ravioles de Carne • 450g</h2>
-    <p>$6.490 · En stock</p>
-    <p>Rellenos de carne seleccionada, elaborados con masa artesanal.</p>
+  <div>
+    <h1>Ravioles de Carne • 450g</h1>
+    <p>Ravioles artesanales rellenos con carne seleccionada y especias. Ideales para acompañar con nuestras salsas caseras.</p>
+    <div class="price">$6.490</div>
+    <a href="carrito.html" class="btn">Agregar al carrito</a>
   </div>
-  <a href="carrito.html" class="btn">Agregar al carrito</a>
 </div>
 
 <footer>© 2025 La Nonna</footer>
 </body>
 </html>
+
