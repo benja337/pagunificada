@@ -75,7 +75,7 @@ footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px s
 </footer>
 
 <script>
-// BASE DE DATOS COMPLETA DE PRODUCTOS
+
 const products = {
     'ravioles-carne': {
         id: 1,
@@ -142,45 +142,45 @@ const products = {
     }
 };
 
-// VARIABLES GLOBALES
+
 let quantity = 1;
 let currentProduct = null;
 
-// OBTENER PRODUCTO DE LA URL
+
 function getProductFromURL() {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get('product') || 'ravioles-carne';
 }
 
-// CARGAR PRODUCTO EN LA PÁGINA
+
 function loadProduct() {
     const productId = getProductFromURL();
     currentProduct = products[productId] || products['ravioles-carne'];
     
     if (currentProduct) {
-        // Actualizar la página
+        
         document.getElementById('productName').textContent = currentProduct.name;
         document.getElementById('productDescription').textContent = currentProduct.description;
         document.getElementById('productPrice').textContent = `$${currentProduct.price.toLocaleString()}`;
         document.getElementById('productImage').src = currentProduct.image;
         document.getElementById('productImage').alt = currentProduct.name;
         
-        // Actualizar título de la página
+        
         document.title = `La Nonna • ${currentProduct.name}`;
         
-        // Actualizar botón de carrito
+        
         updateAddToCartButton();
     }
 }
 
-// ACTUALIZAR CANTIDAD
+
 function updateQuantity(change) {
     quantity = Math.max(1, quantity + change);
     document.getElementById('quantity').textContent = quantity;
     updateAddToCartButton();
 }
 
-// ACTUALIZAR BOTÓN DE CARRITO
+
 function updateAddToCartButton() {
     if (currentProduct) {
         const total = currentProduct.price * quantity;
@@ -189,7 +189,7 @@ function updateAddToCartButton() {
     }
 }
 
-// AGREGAR AL CARRITO
+
 function addToCart() {
     if (!currentProduct) return;
     
@@ -207,7 +207,7 @@ function addToCart() {
     window.location.href = 'carrito.html';
 }
 
-// INICIALIZAR PÁGINA
+
 document.addEventListener('DOMContentLoaded', function() {
     loadProduct();
 });
