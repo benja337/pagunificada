@@ -74,7 +74,7 @@ footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px s
   <div class="promo-grid">
     <div class="promo-card">
       <div class="promo-badge">MÁS POPULAR</div>
-      <img src="https://images.unsplash.com/photo-1604152135912-04a022e23696?auto=format&fit=crop&w=600&q=80" alt="Promoción 2x1 Ravioles" class="promo-image">
+      <img src="https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?auto=format&fit=crop&w=600&q=80" alt="Promoción 2x1 Ravioles" class="promo-image" onerror="this.src='https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80'">
       <div class="promo-content">
         <div class="promo-title">2x1 en Ravioles Artesanales</div>
         <p class="promo-description">Lleva 2 porciones de nuestros ravioles y paga solo 1. Incluye todas las variedades.</p>
@@ -90,7 +90,7 @@ footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px s
 
     <div class="promo-card">
       <div class="promo-badge">NUEVO</div>
-      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80" alt="Combo Familiar" class="promo-image">
+      <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=600&q=80" alt="Combo Familiar" class="promo-image" onerror="this.src='https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80'">
       <div class="promo-content">
         <div class="promo-title">Combo Familiar</div>
         <p class="promo-description">Perfecto para 4 personas: 2 pastas, 2 salsas, pan de ajo y postre de la casa.</p>
@@ -106,7 +106,7 @@ footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px s
 
     <div class="promo-card">
       <div class="promo-badge">DELIVERY</div>
-      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?auto=format&fit=crop&w=600&q=80" alt="Envío Gratis" class="promo-image">
+      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=600&q=80" alt="Envío Gratis" class="promo-image" onerror="this.src='https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80'">
       <div class="promo-content">
         <div class="promo-title">Envío Gratis + Postre</div>
         <p class="promo-description">En compras sobre $25.000 recibe envío gratis y un postre de la casa de regalo.</p>
@@ -117,47 +117,6 @@ footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px s
         </div>
         <div class="promo-conditions">Válido para delivery • Postre sorpresa incluido</div>
         <button class="btn" onclick="applyFreeShipping()">🚚 Activar Beneficio</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="weekly-specials">
-    <h2>Especiales de la Semana</h2>
-    <div class="specials-grid">
-      <div class="promo-card">
-        <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=400&q=80" alt="Lunes de Lasaña" class="promo-image">
-        <div class="promo-content">
-          <div class="promo-title">Lunes de Lasaña</div>
-          <p class="promo-description">Todas nuestras lasañas con 20% de descuento</p>
-          <div class="promo-details">
-            <div class="promo-price">20% OFF</div>
-          </div>
-          <button class="btn" onclick="viewMenu()">📋 Ver Menú</button>
-        </div>
-      </div>
-      
-      <div class="promo-card">
-        <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=400&q=80" alt="Miércoles de Pasta" class="promo-image">
-        <div class="promo-content">
-          <div class="promo-title">Miércoles de Pasta</div>
-          <p class="promo-description">15% de descuento en pastas largas</p>
-          <div class="promo-details">
-            <div class="promo-price">15% OFF</div>
-          </div>
-          <button class="btn" onclick="viewMenu()">📋 Ver Menú</button>
-        </div>
-      </div>
-      
-      <div class="promo-card">
-        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=400&q=80" alt="Viernes de Ñoquis" class="promo-image">
-        <div class="promo-content">
-          <div class="promo-title">Viernes de Ñoquis</div>
-          <p class="promo-description">Ñoquis tradicionales con salsa especial</p>
-          <div class="promo-details">
-            <div class="promo-price">$5.490</div>
-          </div>
-          <button class="btn" onclick="addToCartPromo('Ñoquis Viernes', 5490)">🛒 Ordenar</button>
-        </div>
       </div>
     </div>
   </div>
@@ -185,10 +144,6 @@ function addToCartPromo(productName, price) {
 function applyFreeShipping() {
   localStorage.setItem('freeShipping', 'true');
   alert('¡Envío gratis activado! Se aplicará en tu próxima compra sobre $25.000');
-}
-
-function viewMenu() {
-  window.location.href = 'compras.html';
 }
 </script>
 </body>
