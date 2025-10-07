@@ -1,42 +1,196 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Promociones | La Nonna</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Promociones • La Nonna</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f8fafc;--text:#2d3748;--accent:#2b6cb0;--line:#e2e8f0;}
-body{margin:0;background:var(--bg);font-family:Inter,sans-serif;color:var(--text);}
-.wrap{max-width:1100px;margin:auto;padding:24px;}
-nav.menu{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:24px;}
-nav.menu a{text-decoration:none;color:var(--text);font-weight:600;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:#fff;}
-h1{font-size:32px;margin-bottom:10px;}
-.promos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:20px;}
-.card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
-.card img{width:100%;height:180px;object-fit:cover;}
-.card .info{padding:12px;}
-.btn{display:inline-block;margin-top:10px;padding:10px 16px;background:var(--accent);color:#fff;text-decoration:none;border-radius:8px;font-weight:600;}
+:root{
+  --bg:#fefdf8;--text:#2d1b0e;--sub:#7a5c3c;--line:#e8d8c3;
+  --accent:#c41e3a;--accent-700:#9a1a2d;--card:#fffaf0;
+  --shadow:0 8px 32px rgba(196,30,58,0.08);--radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:var(--card);border-bottom:2px solid var(--line);padding:20px 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow)}
+.brand{font-size:28px;font-weight:700;color:var(--accent);letter-spacing:-0.5px}
+nav.menu{display:flex;gap:24px;align-items:center}
+nav.menu a{text-decoration:none;color:var(--text);font-weight:500;padding:8px 16px;border-radius:25px;transition:all 0.3s ease}
+nav.menu a:hover{background:var(--accent);color:white}
+.wrap{max-width:1200px;margin:40px auto;padding:0 20px}
+h1{text-align:center;margin-bottom:40px;color:var(--accent);font-size:2.5rem}
+.promo-hero{background:linear-gradient(135deg,var(--accent) 0%,var(--accent-700) 100%);color:white;padding:60px 40px;border-radius:var(--radius);text-align:center;margin-bottom:50px}
+.promo-hero h2{font-size:2.5rem;margin-bottom:20px}
+.promo-hero p{font-size:1.2rem;opacity:0.9;max-width:600px;margin:0 auto}
+.promo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:30px;margin-bottom:50px}
+.promo-card{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:all 0.3s ease}
+.promo-card:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(196,30,58,0.2)}
+.promo-badge{background:var(--accent);color:white;padding:8px 20px;font-weight:600;font-size:0.9rem;display:inline-block;border-radius:0 0 12px 0}
+.promo-image{width:100%;height:200px;object-fit:cover}
+.promo-content{padding:25px}
+.promo-title{color:var(--accent);font-size:1.4rem;margin-bottom:10px;font-weight:600}
+.promo-description{color:var(--sub);margin-bottom:15px}
+.promo-details{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:10px}
+.promo-price{font-size:1.5rem;font-weight:700;color:var(--accent)}
+.promo-original{color:var(--sub);text-decoration:line-through;font-size:1.1rem}
+.promo-save{background:#22c55e;color:white;padding:4px 12px;border-radius:12px;font-size:0.9rem;font-weight:600}
+.promo-conditions{color:var(--sub);font-size:0.9rem;margin-bottom:20px;border-top:1px solid var(--line);padding-top:15px}
+.btn{display:block;width:100%;padding:14px;background:var(--accent);color:#fff;border-radius:20px;font-weight:600;text-decoration:none;transition:all 0.3s ease;border:2px solid var(--accent);text-align:center;cursor:pointer}
+.btn:hover{background:transparent;color:var(--accent)}
+.weekly-specials{margin-bottom:50px}
+.weekly-specials h2{text-align:center;color:var(--accent);margin-bottom:30px;font-size:2rem}
+.specials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px solid var(--line);text-align:center;color:var(--sub)}
+@media (max-width:768px){
+  header{padding:16px 20px;flex-direction:column;gap:16px}
+  nav.menu{gap:12px;flex-wrap:wrap;justify-content:center}
+  .promo-grid{grid-template-columns:1fr}
+  .promo-hero{padding:40px 20px}
+  .promo-hero h2{font-size:2rem}
+}
 </style>
 </head>
 <body>
-<div class="wrap">
+<header>
+  <div class="brand">🍝 La Nonna</div>
   <nav class="menu">
     <a href="index.html">Inicio</a>
     <a href="compras.html">Productos</a>
     <a href="promociones.html">Promociones</a>
+    <a href="cupones.html">Cupones</a>
     <a href="reservas.html">Reservas</a>
-    <a href="nosotros.html">Nosotros</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="perfil.html">Mi perfil</a>
   </nav>
+</header>
 
+<div class="wrap">
   <h1>Promociones Especiales</h1>
-  <div class="promos">
-    <div class="card"><img src="https://images.unsplash.com/photo-1604152135912-04a022e23696?auto=format&fit=crop&w=600&q=80"><div class="info"><h3>2x1 en Ravioles</h3><p>Disponible todos los martes.</p><a class="btn" href="compras.html">Aprovechar</a></div></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80"><div class="info"><h3>Descuento del 15%</h3><p>En compras mayores a $25.</p><a class="btn" href="checkout.html">Aplicar</a></div></div>
+  
+  <div class="promo-hero">
+    <h2>¡Ofertas de Temporada!</h2>
+    <p>Descubre nuestras promociones exclusivas y disfruta del auténtico sabor italiano con descuentos especiales</p>
+  </div>
+
+  <div class="promo-grid">
+    <div class="promo-card">
+      <div class="promo-badge">MÁS POPULAR</div>
+      <img src="https://images.unsplash.com/photo-1604152135912-04a022e23696?auto=format&fit=crop&w=600&q=80" alt="Promoción 2x1 Ravioles" class="promo-image">
+      <div class="promo-content">
+        <div class="promo-title">2x1 en Ravioles Artesanales</div>
+        <p class="promo-description">Lleva 2 porciones de nuestros ravioles y paga solo 1. Incluye todas las variedades.</p>
+        <div class="promo-details">
+          <div class="promo-price">$6.490</div>
+          <div class="promo-original">$12.980</div>
+          <div class="promo-save">AHORRA 50%</div>
+        </div>
+        <div class="promo-conditions">Disponible todos los martes • No acumulable con otras promociones</div>
+        <button class="btn" onclick="addToCartPromo('2x1 Ravioles', 6490)">🛒 Aprovechar Oferta</button>
+      </div>
+    </div>
+
+    <div class="promo-card">
+      <div class="promo-badge">NUEVO</div>
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80" alt="Combo Familiar" class="promo-image">
+      <div class="promo-content">
+        <div class="promo-title">Combo Familiar</div>
+        <p class="promo-description">Perfecto para 4 personas: 2 pastas, 2 salsas, pan de ajo y postre de la casa.</p>
+        <div class="promo-details">
+          <div class="promo-price">$24.990</div>
+          <div class="promo-original">$32.500</div>
+          <div class="promo-save">AHORRA 23%</div>
+        </div>
+        <div class="promo-conditions">Incluye envío gratis • Válido hasta agotar stock</div>
+        <button class="btn" onclick="addToCartPromo('Combo Familiar', 24990)">🛒 Agregar Combo</button>
+      </div>
+    </div>
+
+    <div class="promo-card">
+      <div class="promo-badge">DELIVERY</div>
+      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?auto=format&fit=crop&w=600&q=80" alt="Envío Gratis" class="promo-image">
+      <div class="promo-content">
+        <div class="promo-title">Envío Gratis + Postre</div>
+        <p class="promo-description">En compras sobre $25.000 recibe envío gratis y un postre de la casa de regalo.</p>
+        <div class="promo-details">
+          <div class="promo-price">$0</div>
+          <div class="promo-original">$2.000</div>
+          <div class="promo-save">GRATIS</div>
+        </div>
+        <div class="promo-conditions">Válido para delivery • Postre sorpresa incluido</div>
+        <button class="btn" onclick="applyFreeShipping()">🚚 Activar Beneficio</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="weekly-specials">
+    <h2>Especiales de la Semana</h2>
+    <div class="specials-grid">
+      <div class="promo-card">
+        <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=400&q=80" alt="Lunes de Lasaña" class="promo-image">
+        <div class="promo-content">
+          <div class="promo-title">Lunes de Lasaña</div>
+          <p class="promo-description">Todas nuestras lasañas con 20% de descuento</p>
+          <div class="promo-details">
+            <div class="promo-price">20% OFF</div>
+          </div>
+          <button class="btn" onclick="viewMenu()">📋 Ver Menú</button>
+        </div>
+      </div>
+      
+      <div class="promo-card">
+        <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=400&q=80" alt="Miércoles de Pasta" class="promo-image">
+        <div class="promo-content">
+          <div class="promo-title">Miércoles de Pasta</div>
+          <p class="promo-description">15% de descuento en pastas largas</p>
+          <div class="promo-details">
+            <div class="promo-price">15% OFF</div>
+          </div>
+          <button class="btn" onclick="viewMenu()">📋 Ver Menú</button>
+        </div>
+      </div>
+      
+      <div class="promo-card">
+        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=400&q=80" alt="Viernes de Ñoquis" class="promo-image">
+        <div class="promo-content">
+          <div class="promo-title">Viernes de Ñoquis</div>
+          <p class="promo-description">Ñoquis tradicionales con salsa especial</p>
+          <div class="promo-details">
+            <div class="promo-price">$5.490</div>
+          </div>
+          <button class="btn" onclick="addToCartPromo('Ñoquis Viernes', 5490)">🛒 Ordenar</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<footer>
+  © 2025 La Nonna · Tradición italiana en cada plato · Todos los derechos reservados
+</footer>
+
+<script>
+function addToCartPromo(productName, price) {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart.push({
+    id: Date.now(),
+    name: productName,
+    price: price,
+    quantity: 1,
+    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?auto=format&fit=crop&w=200&q=80'
+  });
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert(`¡${productName} agregado al carrito!`);
+  window.location.href = 'carrito.html';
+}
+
+function applyFreeShipping() {
+  localStorage.setItem('freeShipping', 'true');
+  alert('¡Envío gratis activado! Se aplicará en tu próxima compra sobre $25.000');
+}
+
+function viewMenu() {
+  window.location.href = 'compras.html';
+}
+</script>
 </body>
 </html>
 
