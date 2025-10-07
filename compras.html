@@ -1,61 +1,107 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>La Nonna • Tienda</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<title>La Nonna • Productos</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--accent:#3182ce;--accent-700:#2b6cb0;--bg:#f7fafc;--line:#e2e8f0;--text:#2d3748;--sub:#718096;}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
-  header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
-  .logo{font-size:24px;font-weight:700;color:var(--accent)}
-  header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
-  .wrap{max-width:1100px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px}
-  h1{text-align:center;margin-bottom:24px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-  .card{border:1px solid var(--line);border-radius:12px;padding:16px;background:#f9fbff;text-align:center}
-  .img{height:180px;background:#edf2f7;border:1px solid var(--line);border-radius:8px;margin-bottom:12px;display:flex;align-items:center;justify-content:center;color:#a0aec0}
-  .btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 18px;border-radius:8px;border:1px solid var(--accent-700);font-weight:600;text-decoration:none}
-  footer{text-align:center;color:var(--sub);font-size:14px;padding:16px}
+:root{
+  --bg:#fefdf8;--text:#2d1b0e;--sub:#7a5c3c;--line:#e8d8c3;
+  --accent:#c41e3a;--accent-700:#9a1a2d;--card:#fffaf0;
+  --shadow:0 8px 32px rgba(196,30,58,0.08);--radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:var(--card);border-bottom:2px solid var(--line);padding:20px 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow)}
+.brand{font-size:28px;font-weight:700;color:var(--accent);letter-spacing:-0.5px}
+nav.menu{display:flex;gap:24px;align-items:center}
+nav.menu a{text-decoration:none;color:var(--text);font-weight:500;padding:8px 16px;border-radius:25px;transition:all 0.3s ease}
+nav.menu a:hover{background:var(--accent);color:white}
+.wrap{max-width:1200px;margin:40px auto;padding:0 20px}
+h1{text-align:center;margin-bottom:40px;color:var(--accent);font-size:2.5rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
+.card{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:24px;text-align:center;transition:all 0.3s ease;box-shadow:var(--shadow)}
+.card:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(196,30,58,0.15)}
+.card img{width:100%;height:200px;object-fit:cover;border-radius:12px;margin-bottom:16px}
+.card h3{margin:0 0 8px;font-size:1.25rem;font-weight:600}
+.card p{color:var(--sub);font-size:0.95rem;margin-bottom:16px;min-height:60px}
+.card .price{font-size:1.5rem;font-weight:700;color:var(--accent);margin-bottom:16px}
+.btn{display:inline-block;width:100%;padding:12px;background:var(--accent);color:#fff;border-radius:25px;font-weight:600;text-decoration:none;transition:all 0.3s ease;border:2px solid var(--accent);text-align:center}
+.btn:hover{background:transparent;color:var(--accent)}
+footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px solid var(--line);text-align:center;color:var(--sub)}
+@media (max-width:768px){
+  header{padding:16px 20px;flex-direction:column;gap:16px}
+  nav.menu{gap:12px;flex-wrap:wrap;justify-content:center}
+  .grid{grid-template-columns:1fr;gap:20px}
+}
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">La Nonna</div>
-  <nav>
+  <div class="brand">🍝 La Nonna</div>
+  <nav class="menu">
     <a href="index.html">Inicio</a>
-    <a href="perfil.html">Perfil</a>
-    <a href="carrito.html">Carrito</a>
+    <a href="compras.html">Productos</a>
+    <a href="promociones.html">Promociones</a>
+    <a href="reservas.html">Reservas</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="carrito.html">🛒 Carrito</a>
   </nav>
 </header>
 
 <div class="wrap">
-  <h1>Nuestros Productos</h1>
+  <h1>Nuestras Especialidades</h1>
   <div class="grid">
     <div class="card">
-      <div class="img">Ravioles</div>
+      <img src="https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?auto=format&fit=crop&w=600&q=80" alt="Ravioles de Carne">
       <h3>Ravioles de Carne</h3>
-      <p>$6.490</p>
-      <a href="producto.html" class="btn">Ver más</a>
+      <p>Rellenos con carne premium y especias seleccionadas, masa casera de la Nonna</p>
+      <div class="price">$6.490</div>
+      <a href="producto.html?id=1" class="btn">Agregar al Carrito</a>
     </div>
     <div class="card">
-      <div class="img">Lasaña</div>
+      <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=600&q=80" alt="Ñoquis de Papa">
+      <h3>Ñoquis de Papa</h3>
+      <p>Suaves y esponjosos, preparados con papas seleccionadas artesanalmente</p>
+      <div class="price">$5.990</div>
+      <a href="producto.html?id=2" class="btn">Agregar al Carrito</a>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=600&q=80" alt="Lasaña de Pollo">
       <h3>Lasaña de Pollo</h3>
-      <p>$8.990</p>
-      <a href="producto.html" class="btn">Ver más</a>
+      <p>Capas de pasta, pollo desmenuzado y nuestra salsa bechamel casera</p>
+      <div class="price">$8.990</div>
+      <a href="producto.html?id=3" class="btn">Agregar al Carrito</a>
     </div>
     <div class="card">
-      <div class="img">Salsa</div>
-      <h3>Salsa Pomodoro</h3>
-      <p>$3.290</p>
-      <a href="producto.html" class="btn">Ver más</a>
+      <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80" alt="Spaghetti Pomodoro">
+      <h3>Spaghetti Pomodoro</h3>
+      <p>Pasta al dente con nuestra salsa pomodoro casera y albahaca fresca</p>
+      <div class="price">$4.990</div>
+      <a href="producto.html?id=4" class="btn">Agregar al Carrito</a>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?auto=format&fit=crop&w=600&q=80" alt="Canelones Ricotta">
+      <h3>Canelones Ricotta</h3>
+      <p>Rellenos de ricotta y espinacas, bañados en salsa de tomate natural</p>
+      <div class="price">$7.490</div>
+      <a href="producto.html?id=5" class="btn">Agregar al Carrito</a>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=600&q=80" alt="Fettuccine Alfredo">
+      <h3>Fettuccine Alfredo</h3>
+      <p>Pasta ancha con nuestra cremosa salsa alfredo y parmesano reggiano</p>
+      <div class="price">$6.990</div>
+      <a href="producto.html?id=6" class="btn">Agregar al Carrito</a>
     </div>
   </div>
 </div>
 
-<footer>© 2025 La Nonna</footer>
+<footer>
+  © 2025 La Nonna · Tradición italiana en cada plato · Todos los derechos reservados
+</footer>
 </body>
 </html>
 
