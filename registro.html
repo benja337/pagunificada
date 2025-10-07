@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Nonna • Registro</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--accent:#3182ce;--accent-700:#2b6cb0;--bg:#f7fafc;--line:#e2e8f0;--text:#2d3748;--sub:#718096;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);display:flex;flex-direction:column;min-height:100vh}
+  header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-size:24px;font-weight:700;color:var(--accent)}
+  header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
+  .wrap{flex:1;display:flex;align-items:center;justify-content:center}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:40px;width:380px;text-align:center}
+  h1{margin-bottom:24px}
+  input{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;margin-bottom:12px}
+  .btn{display:block;width:100%;background:var(--accent);color:#fff;padding:12px;border-radius:8px;font-weight:600;border:1px solid var(--accent-700)}
+  .alt{margin-top:10px;font-size:14px;color:var(--sub)}
+  .alt a{color:var(--accent);text-decoration:none}
+  footer{text-align:center;color:var(--sub);font-size:14px;padding:16px;margin-top:auto}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">La Nonna</div>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="login.html">Iniciar sesión</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div class="card">
+    <h1>Crear cuenta</h1>
+    <input type="text" placeholder="Nombre completo">
+    <input type="email" placeholder="Correo electrónico">
+    <input type="password" placeholder="Contraseña">
+    <input type="password" placeholder="Confirmar contraseña">
+    <a href="perfil.html" class="btn">Registrarse</a>
+    <div class="alt">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></div>
+  </div>
+</div>
+
+<footer>© 2025 La Nonna</footer>
+</body>
+</html>
