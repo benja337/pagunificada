@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Nonna - Iniciar sesión</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#fffaf7;--text:#2d3748;--sub:#718096;--line:#e2e8f0;--accent:#c53030;--accent-700:#9b2c2c}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;background:linear-gradient(120deg,#fff5f5,#ffe8e8);font-family:Inter,sans-serif}
+  .card{background:#fff;padding:40px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.1);width:320px;text-align:center}
+  h1{color:var(--accent);font-size:28px;margin-bottom:16px}
+  input{width:100%;padding:12px;margin:8px 0;border:1px solid var(--line);border-radius:8px;font-size:14px}
+  button{width:100%;padding:12px;background:var(--accent);border:none;color:#fff;font-weight:600;border-radius:8px;margin-top:10px;cursor:pointer;transition:.2s}
+  button:hover{background:var(--accent-700)}
+  .link{display:block;margin-top:16px;font-size:14px;color:var(--sub);text-decoration:none}
+  .link:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>La Nonna</h1>
+    <input type="text" placeholder="Usuario">
+    <input type="password" placeholder="Contraseña">
+    <button onclick="window.location.href='inicio.html'">Entrar</button>
+    <a href="registro.html" class="link">¿No tienes cuenta? Regístrate</a>
+  </div>
+</body>
+</html>
