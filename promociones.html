@@ -9,6 +9,8 @@
 :root{--bg:#f8fafc;--text:#2d3748;--accent:#2b6cb0;--line:#e2e8f0;}
 body{margin:0;background:var(--bg);font-family:Inter,sans-serif;color:var(--text);}
 .wrap{max-width:1100px;margin:auto;padding:24px;}
+nav.menu{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:24px;}
+nav.menu a{text-decoration:none;color:var(--text);font-weight:600;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:#fff;}
 h1{font-size:32px;margin-bottom:10px;}
 .promos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:20px;}
 .card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
@@ -19,6 +21,16 @@ h1{font-size:32px;margin-bottom:10px;}
 </head>
 <body>
 <div class="wrap">
+  <nav class="menu">
+    <a href="index.html">Inicio</a>
+    <a href="compras.html">Productos</a>
+    <a href="promociones.html">Promociones</a>
+    <a href="reservas.html">Reservas</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="perfil.html">Mi perfil</a>
+  </nav>
+
   <h1>Promociones Especiales</h1>
   <div class="promos">
     <div class="card"><img src="https://images.unsplash.com/photo-1604152135912-04a022e23696?auto=format&fit=crop&w=600&q=80"><div class="info"><h3>2x1 en Ravioles</h3><p>Disponible todos los martes.</p><a class="btn" href="compras.html">Aprovechar</a></div></div>
@@ -27,3 +39,4 @@ h1{font-size:32px;margin-bottom:10px;}
 </div>
 </body>
 </html>
+
