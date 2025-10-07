@@ -1,32 +1,218 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Reservas | La Nonna</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Reservas • La Nonna</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f9fafb;--text:#2d3748;--accent:#3182ce;--line:#e2e8f0;}
-body{margin:0;background:var(--bg);font-family:Inter,sans-serif;color:var(--text);}
-.wrap{max-width:900px;margin:auto;padding:24px;}
-h1{font-size:32px;margin-bottom:10px;}
-form{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;gap:12px;}
-input,select{height:44px;border:1px solid var(--line);border-radius:10px;padding:0 12px;font-size:15px;}
-button{height:44px;background:var(--accent);color:#fff;font-weight:600;border:none;border-radius:10px;}
-img{width:100%;border-radius:12px;margin-top:20px;}
+:root{
+  --bg:#fefdf8;--text:#2d1b0e;--sub:#7a5c3c;--line:#e8d8c3;
+  --accent:#c41e3a;--accent-700:#9a1a2d;--card:#fffaf0;
+  --shadow:0 8px 32px rgba(196,30,58,0.08);--radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:var(--card);border-bottom:2px solid var(--line);padding:20px 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow)}
+.brand{font-size:28px;font-weight:700;color:var(--accent);letter-spacing:-0.5px}
+nav.menu{display:flex;gap:24px;align-items:center}
+nav.menu a{text-decoration:none;color:var(--text);font-weight:500;padding:8px 16px;border-radius:25px;transition:all 0.3s ease}
+nav.menu a:hover{background:var(--accent);color:white}
+.wrap{max-width:1000px;margin:40px auto;padding:0 20px}
+h1{text-align:center;margin-bottom:40px;color:var(--accent);font-size:2.5rem}
+.restaurant-hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:50px;align-items:center}
+.hero-image{width:100%;border-radius:var(--radius);box-shadow:var(--shadow)}
+.hero-content h2{color:var(--accent);margin-bottom:20px;font-size:2rem}
+.hero-content p{color:var(--sub);margin-bottom:15px;font-size:1.1rem}
+.reservation-form{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow);margin-bottom:50px}
+.reservation-form h2{color:var(--accent);margin-bottom:30px;text-align:center;font-size:1.8rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;margin-bottom:8px;font-weight:500;color:var(--text)}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 16px;border:2px solid var(--line);border-radius:12px;font-size:1rem;transition:border-color 0.3s ease;font-family:inherit}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--accent)}
+.form-group textarea{height:100px;resize:vertical}
+.full-width{grid-column:1/-1}
+.btn{display:block;width:100%;padding:16px;background:var(--accent);color:#fff;border-radius:25px;font-weight:600;text-decoration:none;transition:all 0.3s ease;border:2px solid var(--accent);cursor:pointer;font-size:1.1rem;margin-top:10px}
+.btn:hover{background:transparent;color:var(--accent)}
+.locations-section{margin-bottom:50px}
+.locations-section h2{text-align:center;color:var(--accent);margin-bottom:30px;font-size:2rem}
+.locations-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
+.location-card{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:25px;box-shadow:var(--shadow)}
+.location-card h3{color:var(--accent);margin-bottom:15px;font-size:1.3rem}
+.location-info{color:var(--sub);margin-bottom:10px}
+.hours-info{background:var(--bg);padding:15px;border-radius:8px;margin-top:15px}
+footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px solid var(--line);text-align:center;color:var(--sub)}
+@media (max-width:768px){
+  header{padding:16px 20px;flex-direction:column;gap:16px}
+  nav.menu{gap:12px;flex-wrap:wrap;justify-content:center}
+  .restaurant-hero{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .locations-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
+<header>
+  <div class="brand">🍝 La Nonna</div>
+  <nav class="menu">
+    <a href="index.html">Inicio</a>
+    <a href="compras.html">Productos</a>
+    <a href="promociones.html">Promociones</a>
+    <a href="reservas.html">Reservas</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
 <div class="wrap">
   <h1>Reserva tu Mesa</h1>
-  <form>
-    <input type="text" placeholder="Nombre completo">
-    <input type="email" placeholder="Correo electrónico">
-    <input type="date">
-    <select><option>2 personas</option><option>4 personas</option><option>6 personas</option></select>
-    <button type="submit">Reservar ahora</button>
-  </form>
-  <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80" alt="Restaurante La Nonna">
+  
+  <div class="restaurant-hero">
+    <div>
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Restaurante La Nonna" class="hero-image">
+    </div>
+    <div class="hero-content">
+      <h2>Una Experiencia Italiana Auténtica</h2>
+      <p>Disfruta de la verdadera cocina italiana en un ambiente cálido y familiar. Nuestro restaurante te transporta directamente a las trattorias de Italia.</p>
+      <p>Reserva tu mesa con anticipación y asegura tu lugar para una experiencia culinaria inolvidable.</p>
+    </div>
+  </div>
+
+  <div class="reservation-form">
+    <h2>Haz tu Reserva</h2>
+    <form id="reservationForm">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Nombre completo *</label>
+          <input type="text" placeholder="Juan Pérez" required>
+        </div>
+        <div class="form-group">
+          <label>Correo electrónico *</label>
+          <input type="email" placeholder="tu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Teléfono *</label>
+          <input type="tel" placeholder="+56 9 1234 5678" required>
+        </div>
+        <div class="form-group">
+          <label>Número de personas *</label>
+          <select required>
+            <option value="">Selecciona</option>
+            <option value="1">1 persona</option>
+            <option value="2">2 personas</option>
+            <option value="3">3 personas</option>
+            <option value="4">4 personas</option>
+            <option value="5">5 personas</option>
+            <option value="6">6 personas</option>
+            <option value="7">7+ personas</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Fecha de reserva *</label>
+          <input type="date" required min="2025-10-07">
+        </div>
+        <div class="form-group">
+          <label>Hora *</label>
+          <select required>
+            <option value="">Selecciona horario</option>
+            <option value="12:00">12:00 PM</option>
+            <option value="12:30">12:30 PM</option>
+            <option value="13:00">1:00 PM</option>
+            <option value="13:30">1:30 PM</option>
+            <option value="14:00">2:00 PM</option>
+            <option value="19:00">7:00 PM</option>
+            <option value="19:30">7:30 PM</option>
+            <option value="20:00">8:00 PM</option>
+            <option value="20:30">8:30 PM</option>
+            <option value="21:00">9:00 PM</option>
+          </select>
+        </div>
+        <div class="form-group full-width">
+          <label>Sucursal *</label>
+          <select required>
+            <option value="">Selecciona sucursal</option>
+            <option value="providencia">Providencia - Av. Italia 1234</option>
+            <option value="nunoa">Ñuñoa - Av. José Pedro Alessandri 456</option>
+            <option value="las-condes">Las Condes - Av. Apoquindo 789</option>
+          </select>
+        </div>
+        <div class="form-group full-width">
+          <label>Comentarios especiales (opcional)</label>
+          <textarea placeholder="Celebración especial, alergias alimentarias, requerimientos especiales..."></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn">📅 Confirmar Reserva</button>
+    </form>
+  </div>
+
+  <div class="locations-section">
+    <h2>Nuestras Sucursales</h2>
+    <div class="locations-grid">
+      <div class="location-card">
+        <h3>🍝 Providencia</h3>
+        <div class="location-info">📍 Av. Italia 1234, Providencia</div>
+        <div class="location-info">📞 +56 2 2345 6789</div>
+        <div class="location-info">✉️ providencia@lanonna.cl</div>
+        <div class="hours-info">
+          <strong>Horarios:</strong><br>
+          Lunes a Viernes: 11:00 - 22:00<br>
+          Sábados y Domingos: 12:00 - 23:00
+        </div>
+      </div>
+      
+      <div class="location-card">
+        <h3>🍝 Ñuñoa</h3>
+        <div class="location-info">📍 Av. José Pedro Alessandri 456, Ñuñoa</div>
+        <div class="location-info">📞 +56 2 2345 6790</div>
+        <div class="location-info">✉️ nunoa@lanonna.cl</div>
+        <div class="hours-info">
+          <strong>Horarios:</strong><br>
+          Lunes a Viernes: 11:00 - 22:00<br>
+          Sábados y Domingos: 12:00 - 23:00
+        </div>
+      </div>
+      
+      <div class="location-card">
+        <h3>🍝 Las Condes</h3>
+        <div class="location-info">📍 Av. Apoquindo 789, Las Condes</div>
+        <div class="location-info">📞 +56 2 2345 6791</div>
+        <div class="location-info">✉️ lascondes@lanonna.cl</div>
+        <div class="hours-info">
+          <strong>Horarios:</strong><br>
+          Lunes a Viernes: 11:00 - 22:00<br>
+          Sábados y Domingos: 12:00 - 23:00
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<footer>
+  © 2025 La Nonna · Tradición italiana en cada plato · Todos los derechos reservados
+</footer>
+
+<script>
+document.getElementById('reservationForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const formData = new FormData(this);
+  const reservation = {
+    name: formData.get('name'),
+    email: formData.get('email'),
+    phone: formData.get('phone'),
+    people: formData.get('people'),
+    date: formData.get('date'),
+    time: formData.get('time'),
+    location: formData.get('location'),
+    comments: formData.get('comments'),
+    reservationId: 'RES-' + Date.now().toString().slice(-6)
+  };
+  
+  localStorage.setItem('lastReservation', JSON.stringify(reservation));
+  
+  alert(`¡Reserva confirmada! Tu número de reserva es: ${reservation.reservationId}\nTe esperamos el ${reservation.date} a las ${reservation.time}`);
+  this.reset();
+});
+</script>
 </body>
 </html>
