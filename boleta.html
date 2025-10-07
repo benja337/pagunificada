@@ -1,60 +1,137 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>La Nonna • Boleta digital</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<title>La Nonna • Boleta</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#3182ce;--accent-700:#2b6cb0;--bg:#f7fafc;--line:#e2e8f0;--text:#2d3748;--sub:#718096;}
+:root{
+  --bg:#fefdf8;--text:#2d1b0e;--sub:#7a5c3c;--line:#e8d8c3;
+  --accent:#c41e3a;--accent-700:#9a1a2d;--card:#fffaf0;
+  --shadow:0 8px 32px rgba(196,30,58,0.08);--radius:16px;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
-header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:24px;font-weight:700;color:var(--accent)}
-header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
-.wrap{max-width:800px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px}
-h1{text-align:center;margin-bottom:12px}
-.meta{display:flex;justify-content:space-between;color:var(--sub);margin-bottom:16px}
-table{width:100%;border-collapse:collapse;margin:10px 0}
-th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left}
-th{color:var(--sub);font-weight:600}
-.total{display:flex;justify-content:space-between;font-weight:700;margin-top:10px}
-.actions{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}
-.btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 16px;border-radius:8px;border:1px solid var(--accent-700);font-weight:600;text-decoration:none}
-.soft{background:#edf2f7;color:#2d3748;border-color:#cbd5e0}
-footer{text-align:center;color:#718096;font-size:14px;padding:16px}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:var(--card);border-bottom:2px solid var(--line);padding:20px 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow)}
+.brand{font-size:28px;font-weight:700;color:var(--accent);letter-spacing:-0.5px}
+nav.menu{display:flex;gap:24px;align-items:center}
+nav.menu a{text-decoration:none;color:var(--text);font-weight:500;padding:8px 16px;border-radius:25px;transition:all 0.3s ease}
+nav.menu a:hover{background:var(--accent);color:white}
+.wrap{max-width:800px;margin:40px auto;background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow)}
+.boleta-header{text-align:center;margin-bottom:30px;padding-bottom:20px;border-bottom:2px solid var(--line)}
+.boleta-header h1{color:var(--accent);margin-bottom:10px}
+.meta{display:flex;justify-content:space-between;margin-bottom:30px;flex-wrap:wrap;gap:20px}
+.meta div{flex:1;min-width:200px}
+table{width:100%;border-collapse:collapse;margin:20px 0}
+th,td{padding:12px;border-bottom:1px solid var(--line);text-align:left}
+th{color:var(--sub);font-weight:600;background:var(--bg)}
+.total{display:flex;justify-content:space-between;font-size:1.3rem;font-weight:700;margin-top:20px;padding-top:20px;border-top:2px solid var(--line);color:var(--accent)}
+.actions{display:flex;gap:15px;justify-content:flex-end;margin-top:30px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 24px;background:var(--accent);color:#fff;border-radius:20px;font-weight:600;text-decoration:none;transition:all 0.3s ease;border:2px solid var(--accent)}
+.btn:hover{background:transparent;color:var(--accent)}
+.btn-secondary{background:transparent;color:var(--accent)}
+footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px solid var(--line);text-align:center;color:var(--sub)}
+@media print{
+  header,footer,.actions{display:none}
+  .wrap{margin:0;box-shadow:none;border:none}
+}
+@media (max-width:768px){
+  header{padding:16px 20px;flex-direction:column;gap:16px}
+  nav.menu{gap:12px;flex-wrap:wrap;justify-content:center}
+  .meta{flex-direction:column}
+  .actions{justify-content:center}
+}
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">La Nonna</div>
-  <nav>
+  <div class="brand">🍝 La Nonna</div>
+  <nav class="menu">
     <a href="index.html">Inicio</a>
     <a href="historial.html">Historial</a>
+    <a href="perfil.html">Mi Cuenta</a>
   </nav>
 </header>
 
 <div class="wrap" id="boleta">
-  <h1>Boleta electrónica</h1>
+  <div class="boleta-header">
+    <h1>Boleta Electrónica</h1>
+    <p>La Nonna - Pastas Artesanales Italianas</p>
+  </div>
+  
   <div class="meta">
-    <div>Pedido: <strong>ORD-10245</strong></div>
-    <div>Fecha: <strong>06/10/2025</strong></div>
+    <div>
+      <strong>N° Pedido:</strong> <span id="order-id">ORD-10245</span><br>
+      <strong>Fecha:</strong> <span id="order-date">06/10/2025</span>
+    </div>
+    <div>
+      <strong>Cliente:</strong> <span id="customer-name">Juan Pérez</span><br>
+      <strong>Correo:</strong> <span id="customer-email">juan@ejemplo.com</span>
+    </div>
   </div>
 
   <table>
-    <tr><th>Ítem</th><th>Cant.</th><th>Precio</th><th>Subtotal</th></tr>
-    <tr><td>Ravioles de Carne • 450g</td><td>1</td><td>$6.490</td><td>$6.490</td></tr>
-    <tr><td>Envío</td><td>—</td><td>$2.000</td><td>$2.000</td></tr>
+    <thead>
+      <tr><th>Ítem</th><th>Cant.</th><th>Precio</th><th>Subtotal</th></tr>
+    </thead>
+    <tbody id="boleta-items">
+      <tr><td>Ravioles de Carne • 450g</td><td>1</td><td>$6.490</td><td>$6.490</td></tr>
+    </tbody>
   </table>
 
-  <div class="total"><span>Total</span><span>$8.490</span></div>
+  <div class="total">
+    <span>Total</span>
+    <span id="boleta-total">$8.490</span>
+  </div>
 
   <div class="actions">
-    <a href="#" class="btn soft" onclick="window.print();return false;">Imprimir</a>
-    <a href="confirmacion.html" class="btn">Volver</a>
+    <a href="#" class="btn btn-secondary" onclick="window.print();return false;">🖨️ Imprimir</a>
+    <a href="confirmacion.html" class="btn">📋 Volver al Pedido</a>
+    <a href="index.html" class="btn">🏠 Inicio</a>
   </div>
 </div>
 
-<footer>© 2025 La Nonna</footer>
+<footer>
+  © 2025 La Nonna · Tradición italiana en cada plato · Todos los derechos reservados
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const order = JSON.parse(localStorage.getItem('currentOrder'));
+  if (order) {
+    document.getElementById('order-id').textContent = order.id;
+    document.getElementById('order-date').textContent = order.date;
+    
+    let itemsHTML = '';
+    let total = 0;
+    
+    order.items.forEach(item => {
+      const itemTotal = item.price * item.quantity;
+      total += itemTotal;
+      itemsHTML += `
+        <tr>
+          <td>${item.name}</td>
+          <td>${item.quantity}</td>
+          <td>$${item.price.toLocaleString()}</td>
+          <td>$${itemTotal.toLocaleString()}</td>
+        </tr>
+      `;
+    });
+    
+    itemsHTML += `
+      <tr>
+        <td>Envío estándar</td>
+        <td>—</td>
+        <td>$2.000</td>
+        <td>$2.000</td>
+      </tr>
+    `;
+    
+    document.getElementById('boleta-items').innerHTML = itemsHTML;
+    document.getElementById('boleta-total').textContent = '$' + (total + 2000).toLocaleString();
+  }
+});
+</script>
 </body>
 </html>
