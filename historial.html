@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Nonna • Historial de pedidos</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--accent:#3182ce;--accent-700:#2b6cb0;--bg:#f7fafc;--line:#e2e8f0;--text:#2d3748;--sub:#718096;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
+  header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-size:24px;font-weight:700;color:var(--accent)}
+  header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
+  .wrap{max-width:900px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px}
+  h1{text-align:center;margin-bottom:24px}
+  table{width:100%;border-collapse:collapse}
+  th,td{padding:12px;border-bottom:1px solid var(--line);text-align:left}
+  th{color:var(--sub);font-weight:600}
+  .status{padding:6px 10px;border-radius:999px;font-size:13px;font-weight:600}
+  .done{background:#e6fffa;color:#234e52;border:1px solid #81e6d9}
+  .pending{background:#fefcbf;color:#744210;border:1px solid #faf089}
+  footer{text-align:center;color:#718096;font-size:14px;padding:16px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">La Nonna</div>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="perfil.html">Perfil</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <h1>Historial de Pedidos</h1>
+  <table>
+    <tr><th>N° Pedido</th><th>Fecha</th><th>Estado</th><th>Total</th></tr>
+    <tr><td>#00124</td><td>12/05/2025</td><td><span class="status done">Completado</span></td><td>$12.480</td></tr>
+    <tr><td>#00125</td><td>25/06/2025</td><td><span class="status pending">Pendiente</span></td><td>$8.990</td></tr>
+  </table>
+</div>
+
+<footer>© 2025 La Nonna</footer>
+</body>
+</html>
