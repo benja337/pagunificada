@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Nonna • Seguimiento de pedido</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#3182ce;--accent-700:#2b6cb0;--bg:#f7fafc;--line:#e2e8f0;--text:#2d3748;--sub:#718096;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
+header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:24px;font-weight:700;color:var(--accent)}
+header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
+.wrap{max-width:900px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+h1{text-align:center;margin-bottom:16px}
+.summary{border:1px solid var(--line);border-radius:12px;background:#f9fbff;padding:12px;margin-bottom:16px}
+.row{display:flex;justify-content:space-between;margin:6px 0}
+.timeline{border:1px dashed var(--line);border-radius:12px;background:#fff;padding:14px}
+.step{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);border-radius:10px;padding:10px;margin-bottom:8px;background:#fff}
+.badge{padding:6px 10px;border-radius:999px;background:#edf2f7;border:1px solid #cbd5e0;font-size:12px;color:#1a365d}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 16px;border-radius:8px;border:1px solid var(--accent-700);font-weight:600;text-decoration:none;margin-top:12px;float:right}
+footer{text-align:center;color:#718096;font-size:14px;padding:16px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">La Nonna</div>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="historial.html">Historial</a>
+    <a href="perfil.html">Perfil</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <h1>Seguimiento</h1>
+  <div class="summary">
+    <div class="row"><span>Pedido</span><strong>ORD-10245</strong></div>
+    <div class="row"><span>Cliente</span><span>ana@example.com</span></div>
+    <div class="row"><span>Total</span><strong>$8.490</strong></div>
+  </div>
+
+  <div class="timeline">
+    <div class="step"><span>Preparando</span><span class="badge">completado</span></div>
+    <div class="step"><span>En tránsito</span><span class="badge">activo</span></div>
+    <div class="step"><span>Entregado</span><span class="badge">pendiente</span></div>
+  </div>
+
+  <a href="confirmacion.html" class="btn">Ver comprobante</a>
+</div>
+
+<footer>© 2025 La Nonna</footer>
+</body>
+</html>
