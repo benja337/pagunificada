@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Nonna - Pago</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#fffaf7;--text:#2d3748;--sub:#718096;--line:#e2e8f0;--accent:#c53030;--accent-700:#9b2c2c}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);font-family:Inter,sans-serif;color:var(--text)}
+  header{display:flex;justify-content:space-between;align-items:center;padding:20px 10%;background:#fff;border-bottom:1px solid var(--line)}
+  header h1{font-size:26px;font-weight:700;color:var(--accent)}
+  nav a{margin:0 10px;text-decoration:none;color:var(--text);font-weight:600}
+  nav a:hover{color:var(--accent)}
+  main{padding:60px 10%;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  form{background:#fff;padding:30px;border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,.05)}
+  label{display:block;margin-bottom:6px;font-weight:600}
+  input{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;margin-bottom:16px}
+  button{background:var(--accent);color:#fff;border:none;padding:12px 22px;border-radius:10px;font-weight:600;width:100%;cursor:pointer}
+  button:hover{background:var(--accent-700)}
+  .summary{background:#fff;padding:30px;border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,.05)}
+  .summary h2{font-size:22px;margin-bottom:10px}
+  footer{text-align:center;padding:20px;color:var(--sub);border-top:1px solid var(--line);background:#fff;margin-top:40px}
+  @media(max-width:900px){main{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>La Nonna</h1>
+  <nav>
+    <a href="inicio.html">Inicio</a>
+    <a href="compras.html">Compras</a>
+    <a href="carrito.html">Carrito</a>
+  </nav>
+</header>
+
+<main>
+  <form onsubmit="event.preventDefault();window.location.href='confirmacion.html'">
+    <h2>Datos de pago</h2>
+    <label>Nombre completo</label>
+    <input type="text" required>
+    <label>Número de tarjeta</label>
+    <input type="text" maxlength="16" required>
+    <label>Fecha de expiración</label>
+    <input type="text" placeholder="MM/AA" required>
+    <label>CVV</label>
+    <input type="text" maxlength="3" required>
+    <button type="submit">Pagar</button>
+  </form>
+
+  <div class="summary">
+    <h2>Resumen del pedido</h2>
+    <p>Ravioles de carne x1</p>
+    <p>Lasaña boloñesa x2</p>
+    <p><strong>Total: $26.470</strong></p>
+  </div>
+</main>
+
+<footer>© 2025 La Nonna - Pago seguro y rápido</footer>
+</body>
+</html>
