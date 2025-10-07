@@ -1,55 +1,130 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>La Nonna • Seguimiento de pedido</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<title>La Nonna • Seguimiento</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#3182ce;--accent-700:#2b6cb0;--bg:#f7fafc;--line:#e2e8f0;--text:#2d3748;--sub:#718096;}
+:root{
+  --bg:#fefdf8;--text:#2d1b0e;--sub:#7a5c3c;--line:#e8d8c3;
+  --accent:#c41e3a;--accent-700:#9a1a2d;--card:#fffaf0;
+  --shadow:0 8px 32px rgba(196,30,58,0.08);--radius:16px;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
-header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:24px;font-weight:700;color:var(--accent)}
-header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
-.wrap{max-width:900px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
-h1{text-align:center;margin-bottom:16px}
-.summary{border:1px solid var(--line);border-radius:12px;background:#f9fbff;padding:12px;margin-bottom:16px}
-.row{display:flex;justify-content:space-between;margin:6px 0}
-.timeline{border:1px dashed var(--line);border-radius:12px;background:#fff;padding:14px}
-.step{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);border-radius:10px;padding:10px;margin-bottom:8px;background:#fff}
-.badge{padding:6px 10px;border-radius:999px;background:#edf2f7;border:1px solid #cbd5e0;font-size:12px;color:#1a365d}
-.btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 16px;border-radius:8px;border:1px solid var(--accent-700);font-weight:600;text-decoration:none;margin-top:12px;float:right}
-footer{text-align:center;color:#718096;font-size:14px;padding:16px}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:var(--card);border-bottom:2px solid var(--line);padding:20px 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow)}
+.brand{font-size:28px;font-weight:700;color:var(--accent);letter-spacing:-0.5px}
+nav.menu{display:flex;gap:24px;align-items:center}
+nav.menu a{text-decoration:none;color:var(--text);font-weight:500;padding:8px 16px;border-radius:25px;transition:all 0.3s ease}
+nav.menu a:hover{background:var(--accent);color:white}
+.wrap{max-width:800px;margin:40px auto;padding:0 20px}
+h1{text-align:center;margin-bottom:40px;color:var(--accent);font-size:2.2rem}
+.order-summary{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:25px;margin-bottom:30px;box-shadow:var(--shadow)}
+.summary-row{display:flex;justify-content:space-between;margin-bottom:12px}
+.timeline{position:relative;max-width:600px;margin:0 auto}
+.timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:3px;background:var(--line)}
+.step{display:flex;align-items:flex-start;margin-bottom:30px;position:relative}
+.step-icon{width:40px;height:40px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;margin-right:20px;flex-shrink:0;z-index:2}
+.step-content{flex:1;background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.step.active .step-icon{background:var(--accent)}
+.step.completed .step-icon{background:#22c55e}
+.step.pending .step-icon{background:var(--sub)}
+.step-time{color:var(--sub);font-size:0.9rem;margin-top:8px}
+.actions{text-align:center;margin-top:40px}
+.btn{display:inline-block;padding:14px 28px;background:var(--accent);color:#fff;border-radius:25px;font-weight:600;text-decoration:none;transition:all 0.3s ease;border:2px solid var(--accent);margin:0 10px}
+.btn:hover{background:transparent;color:var(--accent)}
+footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px solid var(--line);text-align:center;color:var(--sub)}
+@media (max-width:768px){
+  header{padding:16px 20px;flex-direction:column;gap:16px}
+  nav.menu{gap:12px;flex-wrap:wrap;justify-content:center}
+  .step-content{padding:15px}
+}
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">La Nonna</div>
-  <nav>
+  <div class="brand">🍝 La Nonna</div>
+  <nav class="menu">
     <a href="index.html">Inicio</a>
     <a href="historial.html">Historial</a>
-    <a href="perfil.html">Perfil</a>
+    <a href="perfil.html">Mi Cuenta</a>
   </nav>
 </header>
 
 <div class="wrap">
-  <h1>Seguimiento</h1>
-  <div class="summary">
-    <div class="row"><span>Pedido</span><strong>ORD-10245</strong></div>
-    <div class="row"><span>Cliente</span><span>ana@example.com</span></div>
-    <div class="row"><span>Total</span><strong>$8.490</strong></div>
+  <h1>Seguimiento de Pedido</h1>
+  
+  <div class="order-summary">
+    <div class="summary-row">
+      <strong>N° Pedido:</strong>
+      <span id="tracking-number">ORD-10245</span>
+    </div>
+    <div class="summary-row">
+      <strong>Cliente:</strong>
+      <span>Juan Pérez</span>
+    </div>
+    <div class="summary-row">
+      <strong>Estado actual:</strong>
+      <span style="color:var(--accent);font-weight:600" id="current-status">En preparación</span>
+    </div>
   </div>
 
   <div class="timeline">
-    <div class="step"><span>Preparando</span><span class="badge">completado</span></div>
-    <div class="step"><span>En tránsito</span><span class="badge">activo</span></div>
-    <div class="step"><span>Entregado</span><span class="badge">pendiente</span></div>
+    <div class="step completed">
+      <div class="step-icon">✓</div>
+      <div class="step-content">
+        <strong>Pedido Confirmado</strong>
+        <p>Tu pedido ha sido recibido y confirmado.</p>
+        <div class="step-time">Hoy, 10:30 AM</div>
+      </div>
+    </div>
+    
+    <div class="step active">
+      <div class="step-icon">👨‍🍳</div>
+      <div class="step-content">
+        <strong>En Preparación</strong>
+        <p>Nuestros chefs están preparando tu pedido con ingredientes frescos.</p>
+        <div class="step-time">Estimado: 25-35 min</div>
+      </div>
+    </div>
+    
+    <div class="step pending">
+      <div class="step-icon">🚚</div>
+      <div class="step-content">
+        <strong>En Camino</strong>
+        <p>Tu pedido será despachado pronto.</p>
+        <div class="step-time">Próximamente</div>
+      </div>
+    </div>
+    
+    <div class="step pending">
+      <div class="step-icon">✅</div>
+      <div class="step-content">
+        <strong>Entregado</strong>
+        <p>Tu pedido llegará a tu domicilio.</p>
+        <div class="step-time">--:--</div>
+      </div>
+    </div>
   </div>
 
-  <a href="confirmacion.html" class="btn">Ver comprobante</a>
+  <div class="actions">
+    <a href="boleta.html" class="btn">📋 Ver Boleta</a>
+    <a href="historial.html" class="btn btn-secondary">📦 Historial</a>
+  </div>
 </div>
 
-<footer>© 2025 La Nonna</footer>
+<footer>
+  © 2025 La Nonna · Tradición italiana en cada plato · Todos los derechos reservados
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const order = JSON.parse(localStorage.getItem('currentOrder'));
+  if (order) {
+    document.getElementById('tracking-number').textContent = order.id;
+  }
+});
+</script>
 </body>
 </html>
