@@ -38,9 +38,6 @@ h1{text-align:center;margin-bottom:40px;color:var(--accent);font-size:2.5rem}
 .promo-conditions{color:var(--sub);font-size:0.9rem;margin-bottom:20px;border-top:1px solid var(--line);padding-top:15px}
 .btn{display:block;width:100%;padding:14px;background:var(--accent);color:#fff;border-radius:20px;font-weight:600;text-decoration:none;transition:all 0.3s ease;border:2px solid var(--accent);text-align:center;cursor:pointer}
 .btn:hover{background:transparent;color:var(--accent)}
-.weekly-specials{margin-bottom:50px}
-.weekly-specials h2{text-align:center;color:var(--accent);margin-bottom:30px;font-size:2rem}
-.specials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
 footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px solid var(--line);text-align:center;color:var(--sub)}
 @media (max-width:768px){
   header{padding:16px 20px;flex-direction:column;gap:16px}
@@ -74,7 +71,7 @@ footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px s
   <div class="promo-grid">
     <div class="promo-card">
       <div class="promo-badge">MÁS POPULAR</div>
-      <img src="https://dojiw2m9tvv09.cloudfront.net/40723/product/M_img-98687307.jpeg?95&time=1759686778" alt="Promoción 2x1 Ravioles" class="promo-image" onerror="this.src='https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80'">
+      <img src="https://dojiw2m9tvv09.cloudfront.net/40723/product/M_img-98687307.jpeg?95&time=1759686778" alt="Promoción 2x1 Ravioles" class="promo-image">
       <div class="promo-content">
         <div class="promo-title">2x1 en Ravioles Artesanales</div>
         <p class="promo-description">Lleva 2 porciones de nuestros ravioles y paga solo 1. Incluye todas las variedades.</p>
@@ -84,13 +81,13 @@ footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px s
           <div class="promo-save">AHORRA 50%</div>
         </div>
         <div class="promo-conditions">Disponible todos los martes • No acumulable con otras promociones</div>
-        <button class="btn" onclick="addToCartPromo('2x1 Ravioles', 6490)">🛒 Aprovechar Oferta</button>
+        <button class="btn" onclick="addPromoToCart('2x1 Ravioles Artesanales', 6490, 'https://dojiw2m9tvv09.cloudfront.net/40723/product/M_img-98687307.jpeg?95&time=1759686778')">🛒 Aprovechar Oferta</button>
       </div>
     </div>
 
     <div class="promo-card">
       <div class="promo-badge">NUEVO</div>
-      <img src="https://img.freepik.com/foto-gratis/feliz-familia-extendida-divirtiendose-mientras-habla-almuerzo-comedor-foco-esta-nina_637285-2884.jpg?semt=ais_hybrid&w=740&q=80" alt="Combo Familiar" class="promo-image" onerror="this.src='https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80'">
+      <img src="https://img.freepik.com/foto-gratis/feliz-familia-extendida-divirtiendose-mientras-habla-almuerzo-comedor-foco-esta-nina_637285-2884.jpg?semt=ais_hybrid&w=740&q=80" alt="Combo Familiar" class="promo-image">
       <div class="promo-content">
         <div class="promo-title">Combo Familiar</div>
         <p class="promo-description">Perfecto para 4 personas: 2 pastas, 2 salsas, pan de ajo y postre de la casa.</p>
@@ -100,13 +97,13 @@ footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px s
           <div class="promo-save">AHORRA 23%</div>
         </div>
         <div class="promo-conditions">Incluye envío gratis • Válido hasta agotar stock</div>
-        <button class="btn" onclick="addToCartPromo('Combo Familiar', 24990)">🛒 Agregar Combo</button>
+        <button class="btn" onclick="addPromoToCart('Combo Familiar', 24990, 'https://img.freepik.com/foto-gratis/feliz-familia-extendida-divirtiendose-mientras-habla-almuerzo-comedor-foco-esta-nina_637285-2884.jpg?semt=ais_hybrid&w=740&q=80')">🛒 Agregar Combo</button>
       </div>
     </div>
 
     <div class="promo-card">
       <div class="promo-badge">DELIVERY</div>
-      <img src="https://content-cocina.lecturas.com/medio/2023/06/21/postre-italiano-en-5-minutos-una-tentacion-irresistible-y-adictiva_33556ca7_1200x1200.jpg" alt="Envío Gratis" class="promo-image" onerror="this.src='https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80'">
+      <img src="https://content-cocina.lecturas.com/medio/2023/06/21/postre-italiano-en-5-minutos-una-tentacion-irresistible-y-adictiva_33556ca7_1200x1200.jpg" alt="Envío Gratis" class="promo-image">
       <div class="promo-content">
         <div class="promo-title">Envío Gratis + Postre</div>
         <p class="promo-description">En compras sobre $25.000 recibe envío gratis y un postre de la casa de regalo.</p>
@@ -127,14 +124,14 @@ footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px s
 </footer>
 
 <script>
-function addToCartPromo(productName, price) {
+function addPromoToCart(productName, price, imageUrl) {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   cart.push({
     id: Date.now(),
     name: productName,
     price: price,
     quantity: 1,
-    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?auto=format&fit=crop&w=200&q=80'
+    image: imageUrl
   });
   localStorage.setItem('cart', JSON.stringify(cart));
   alert(`¡${productName} agregado al carrito!`);
