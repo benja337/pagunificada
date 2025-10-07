@@ -1,46 +1,179 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>La Nonna • Valoraciones</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--accent:#3182ce;--accent-700:#2b6cb0;--bg:#f7fafc;--line:#e2e8f0;--text:#2d3748;--sub:#718096;}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
-  header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
-  .logo{font-size:24px;font-weight:700;color:var(--accent)}
-  header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
-  .wrap{max-width:900px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px}
-  h1{text-align:center;margin-bottom:24px}
-  .product{border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:20px}
-  .img{height:180px;border:1px solid var(--line);border-radius:10px;background:#edf2f7;display:flex;align-items:center;justify-content:center;margin:10px 0;color:#718096}
-  .stars{text-align:center;font-size:24px;color:#f6ad55;margin-bottom:10px}
-  .btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 28px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid var(--accent-700)}
-  footer{text-align:center;color:var(--sub);font-size:14px;padding:16px}
+:root{
+  --bg:#fefdf8;--text:#2d1b0e;--sub:#7a5c3c;--line:#e8d8c3;
+  --accent:#c41e3a;--accent-700:#9a1a2d;--card:#fffaf0;
+  --shadow:0 8px 32px rgba(196,30,58,0.08);--radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:var(--card);border-bottom:2px solid var(--line);padding:20px 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow)}
+.brand{font-size:28px;font-weight:700;color:var(--accent);letter-spacing:-0.5px}
+nav.menu{display:flex;gap:24px;align-items:center}
+nav.menu a{text-decoration:none;color:var(--text);font-weight:500;padding:8px 16px;border-radius:25px;transition:all 0.3s ease}
+nav.menu a:hover{background:var(--accent);color:white}
+.wrap{max-width:1000px;margin:40px auto;padding:0 20px}
+h1{text-align:center;margin-bottom:40px;color:var(--accent);font-size:2.2rem}
+.rating-summary{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:30px;margin-bottom:40px;text-align:center;box-shadow:var(--shadow)}
+.overall-rating{font-size:3rem;font-weight:700;color:var(--accent);margin-bottom:10px}
+.stars{font-size:2rem;color:#fbbf24;margin-bottom:15px}
+.total-reviews{color:var(--sub);font-size:1.1rem}
+.rating-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin-top:25px}
+.stat-item{text-align:center}
+.stat-bar{height:8px;background:var(--line);border-radius:4px;margin:8px 0;overflow:hidden}
+.stat-fill{height:100%;background:var(--accent);border-radius:4px}
+.reviews-grid{display:flex;flex-direction:column;gap:20px}
+.review-card{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:25px;box-shadow:var(--shadow)}
+.review-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:15px;flex-wrap:wrap;gap:15px}
+.reviewer-info{display:flex;align-items:center;gap:12px}
+.reviewer-avatar{width:40px;height:40px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-weight:600}
+.reviewer-name{font-weight:600}
+.review-date{color:var(--sub);font-size:0.9rem}
+.review-stars{color:#fbbf24;font-size:1.1rem}
+.review-product{color:var(--accent);font-weight:600;margin-bottom:10px}
+.review-text{color:var(--text);margin-bottom:15px}
+.review-images{display:flex;gap:10px;margin-top:15px}
+.review-image{width:80px;height:80px;border-radius:8px;object-fit:cover;cursor:pointer;border:2px solid var(--line)}
+.write-review-btn{display:block;width:200px;margin:30px auto;padding:14px;background:var(--accent);color:#fff;border-radius:25px;font-weight:600;text-decoration:none;text-align:center;transition:all 0.3s ease;border:2px solid var(--accent)}
+.write-review-btn:hover{background:transparent;color:var(--accent)}
+footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px solid var(--line);text-align:center;color:var(--sub)}
+@media (max-width:768px){
+  header{padding:16px 20px;flex-direction:column;gap:16px}
+  nav.menu{gap:12px;flex-wrap:wrap;justify-content:center}
+  .review-header{flex-direction:column;align-items:flex-start}
+}
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">La Nonna</div>
-  <nav>
+  <div class="brand">🍝 La Nonna</div>
+  <nav class="menu">
     <a href="index.html">Inicio</a>
     <a href="compras.html">Productos</a>
-    <a href="perfil.html">Perfil</a>
+    <a href="moderacion.html">Moderación</a>
   </nav>
 </header>
 
 <div class="wrap">
-  <h1>Valorar Producto</h1>
-  <div class="product">
-    <h3>Ravioles de Carne • 450g</h3>
-    <div class="img">Imagen del producto</div>
-    <div class="stars">★ ★ ★ ★ ☆</div>
-    <a href="#" class="btn">Enviar valoración</a>
+  <h1>Valoraciones de Nuestros Clientes</h1>
+  
+  <div class="rating-summary">
+    <div class="overall-rating">4.8</div>
+    <div class="stars">★★★★★</div>
+    <div class="total-reviews">Basado en 247 valoraciones</div>
+    
+    <div class="rating-stats">
+      <div class="stat-item">
+        <div>5 estrellas</div>
+        <div class="stat-bar"><div class="stat-fill" style="width:85%"></div></div>
+        <div>85%</div>
+      </div>
+      <div class="stat-item">
+        <div>4 estrellas</div>
+        <div class="stat-bar"><div class="stat-fill" style="width:12%"></div></div>
+        <div>12%</div>
+      </div>
+      <div class="stat-item">
+        <div>3 estrellas</div>
+        <div class="stat-bar"><div class="stat-fill" style="width:2%"></div></div>
+        <div>2%</div>
+      </div>
+      <div class="stat-item">
+        <div>2 estrellas</div>
+        <div class="stat-bar"><div class="stat-fill" style="width:1%"></div></div>
+        <div>1%</div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#" class="write-review-btn">✍️ Escribir Valoración</a>
+
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar">MP</div>
+          <div>
+            <div class="reviewer-name">María Pérez</div>
+            <div class="review-date">Hace 2 días</div>
+          </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+      </div>
+      <div class="review-product">Ravioles de Carne • 450g</div>
+      <div class="review-text">
+        ¡Increíble sabor! Los ravioles son exactamente como los que preparaba mi abuela italiana. 
+        La masa perfecta y el relleno muy sabroso. Llegaron en perfecto estado y muy rápido.
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar">CR</div>
+          <div>
+            <div class="reviewer-name">Carlos Rodríguez</div>
+            <div class="review-date">Hace 1 semana</div>
+          </div>
+        </div>
+        <div class="review-stars">★★★★☆</div>
+      </div>
+      <div class="review-product">Lasaña de Pollo</div>
+      <div class="review-text">
+        Muy buena lasaña, cremosa y con mucho sabor. Solo le pongo 4 estrellas porque llegó 
+        un poco fría, pero el sabor era excelente. Volveré a pedir.
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar">AG</div>
+          <div>
+            <div class="reviewer-name">Ana González</div>
+            <div class="review-date">Hace 3 días</div>
+          </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+      </div>
+      <div class="review-product">Ñoquis de Papa + Salsa Pomodoro</div>
+      <div class="review-text">
+        Los ñoquis estaban perfectos, suaves y con la textura ideal. La salsa pomodoro es 
+        espectacular, se nota que es casera. El delivery llegó antes de lo esperado. ¡100% recomendado!
+      </div>
+      <div class="review-images">
+        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=200&q=80" alt="Ñoquis" class="review-image">
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar">LS</div>
+          <div>
+            <div class="reviewer-name">Luis Sánchez</div>
+            <div class="review-date">Hace 2 semanas</div>
+          </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+      </div>
+      <div class="review-product">Spaghetti Pomodoro</div>
+      <div class="review-text">
+        Simplemente perfecto. La pasta al dente como me gusta, la salsa con el punto justo de acidez 
+        y la albahaca fresca. Me recordó a mi viaje a Italia. Servicio impecable.
+      </div>
+    </div>
   </div>
 </div>
 
-<footer>© 2025 La Nonna</footer>
+<footer>
+  © 2025 La Nonna · Tradición italiana en cada plato · Todos los derechos reservados
+</footer>
 </body>
 </html>
