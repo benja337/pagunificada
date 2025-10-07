@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Nonna • Tickets</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--accent:#3182ce;--accent-700:#2b6cb0;--bg:#f7fafc;--line:#e2e8f0;--text:#2d3748;--sub:#718096;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
+  header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-size:24px;font-weight:700;color:var(--accent)}
+  header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
+  .wrap{max-width:900px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px}
+  h1{text-align:center;margin-bottom:24px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .box{border:1px solid var(--line);border-radius:12px;padding:16px}
+  .field{border:1px solid #cbd5e0;border-radius:8px;padding:10px;margin-bottom:8px;text-align:center;color:#4a5568}
+  .btn{display:block;text-align:center;background:var(--accent);color:#fff;padding:12px;border-radius:8px;font-weight:600;border:1px solid var(--accent-700)}
+  .list{margin-top:24px}
+  .row{border:1px solid var(--line);border-radius:10px;padding:10px;margin-bottom:8px}
+  footer{text-align:center;color:var(--sub);font-size:14px;padding:16px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">La Nonna</div>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="soporte.html">Soporte</a>
+    <a href="perfil.html">Perfil</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <h1>Gestión de Tickets</h1>
+  <div class="grid">
+    <div class="box">
+      <h3>Nuevo Ticket</h3>
+      <div class="field">Asunto</div>
+      <div class="field">Descripción</div>
+      <a href="#" class="btn">Enviar</a>
+    </div>
+    <div class="box">
+      <h3>Actualizar Estado</h3>
+      <div class="field">Ticket ID</div>
+      <div class="field">Nuevo Estado</div>
+      <a href="#" class="btn">Actualizar</a>
+    </div>
+  </div>
+
+  <div class="list">
+    <div class="row">#TCK-2001 — Pedido demorado — <strong>Pendiente</strong></div>
+    <div class="row">#TCK-2002 — Error en pago — <strong>Resuelto</strong></div>
+  </div>
+</div>
+
+<footer>© 2025 La Nonna</footer>
+</body>
+</html>
