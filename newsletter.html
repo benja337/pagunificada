@@ -1,46 +1,155 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>La Nonna • Newsletter</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Newsletter • La Nonna</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--accent:#3182ce;--accent-700:#2b6cb0;--bg:#f7fafc;--line:#e2e8f0;--text:#2d3748;--sub:#718096;}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
-  header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
-  .logo{font-size:24px;font-weight:700;color:var(--accent)}
-  header a{color:var(--text);text-decoration:none;margin:0 10px;font-weight:600}
-  .newsletter{max-width:600px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px;text-align:center}
-  h1{margin-bottom:20px}
-  p{color:var(--sub);margin-bottom:20px}
-  input{width:100%;height:44px;border:1px solid var(--line);border-radius:10px;padding:0 12px;font-size:15px;margin-bottom:16px}
-  .btn{width:100%;height:44px;border:none;border-radius:10px;background:var(--accent);color:#fff;font-weight:600;font-size:16px;cursor:pointer}
-  .btn:hover{background:var(--accent-700)}
-  footer{text-align:center;color:var(--sub);font-size:14px;padding:16px}
+:root{
+  --bg:#fefdf8;--text:#2d1b0e;--sub:#7a5c3c;--line:#e8d8c3;
+  --accent:#c41e3a;--accent-700:#9a1a2d;--card:#fffaf0;
+  --shadow:0 8px 32px rgba(196,30,58,0.08);--radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:var(--card);border-bottom:2px solid var(--line);padding:20px 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow)}
+.brand{font-size:28px;font-weight:700;color:var(--accent);letter-spacing:-0.5px}
+nav.menu{display:flex;gap:24px;align-items:center}
+nav.menu a{text-decoration:none;color:var(--text);font-weight:500;padding:8px 16px;border-radius:25px;transition:all 0.3s ease}
+nav.menu a:hover{background:var(--accent);color:white}
+.wrap{max-width:800px;margin:40px auto;padding:0 20px}
+.newsletter-hero{text-align:center;margin-bottom:50px}
+.newsletter-icon{font-size:5rem;margin-bottom:20px}
+h1{color:var(--accent);margin-bottom:20px;font-size:2.5rem}
+.subtitle{color:var(--sub);font-size:1.2rem;margin-bottom:30px;max-width:600px;margin-left:auto;margin-right:auto}
+.newsletter-card{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:50px;text-align:center;box-shadow:var(--shadow);margin-bottom:50px}
+.newsletter-card h2{color:var(--accent);margin-bottom:20px;font-size:1.8rem}
+.newsletter-form{max-width:400px;margin:0 auto}
+.form-group{margin-bottom:20px;text-align:left}
+.form-group label{display:block;margin-bottom:8px;font-weight:500;color:var(--text)}
+.form-group input{width:100%;padding:14px 16px;border:2px solid var(--line);border-radius:12px;font-size:1rem;transition:border-color 0.3s ease}
+.form-group input:focus{outline:none;border-color:var(--accent)}
+.btn{display:block;width:100%;padding:16px;background:var(--accent);color:#fff;border-radius:25px;font-weight:600;text-decoration:none;transition:all 0.3s ease;border:2px solid var(--accent);cursor:pointer;font-size:1.1rem;margin-top:10px}
+.btn:hover{background:transparent;color:var(--accent)}
+.benefits-section{margin-bottom:50px}
+.benefits-section h2{text-align:center;color:var(--accent);margin-bottom:40px;font-size:2rem}
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+.benefit-item{text-align:center;padding:25px}
+.benefit-icon{font-size:3rem;margin-bottom:15px}
+.benefit-item h3{color:var(--accent);margin-bottom:10px;font-size:1.3rem}
+.benefit-item p{color:var(--sub)}
+.success-message{background:#dcfce7;border:2px solid #22c55e;color:#166534;padding:20px;border-radius:var(--radius);text-align:center;margin-top:20px;display:none}
+footer{margin-top:80px;padding:40px 20px;background:var(--card);border-top:2px solid var(--line);text-align:center;color:var(--sub)}
+@media (max-width:768px){
+  header{padding:16px 20px;flex-direction:column;gap:16px}
+  nav.menu{gap:12px;flex-wrap:wrap;justify-content:center}
+  .newsletter-card{padding:30px 25px}
+  .benefits-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">La Nonna</div>
-  <nav>
+  <div class="brand">🍝 La Nonna</div>
+  <nav class="menu">
     <a href="index.html">Inicio</a>
     <a href="compras.html">Productos</a>
+    <a href="promociones.html">Promociones</a>
     <a href="contacto.html">Contacto</a>
   </nav>
 </header>
 
-<div class="newsletter">
-  <h1>Suscríbete a nuestro Newsletter</h1>
-  <p>Recibe recetas, promociones y novedades directamente en tu correo.</p>
-  <form>
-    <input type="email" placeholder="Tu correo electrónico">
-    <button class="btn" type="submit">Suscribirme</button>
-  </form>
+<div class="wrap">
+  <div class="newsletter-hero">
+    <div class="newsletter-icon">📧</div>
+    <h1>Únete a la Familia La Nonna</h1>
+    <p class="subtitle">Recibe recetas secretas, promociones exclusivas y novedades directamente en tu correo. Sé el primero en conocer nuestras nuevas creaciones.</p>
+  </div>
+
+  <div class="newsletter-card">
+    <h2>Suscríbete a Nuestro Newsletter</h2>
+    <form id="newsletterForm" class="newsletter-form">
+      <div class="form-group">
+        <label>Nombre completo</label>
+        <input type="text" placeholder="Tu nombre" required>
+      </div>
+      <div class="form-group">
+        <label>Correo electrónico *</label>
+        <input type="email" placeholder="tu@email.com" required>
+      </div>
+      <div class="form-group">
+        <label>¿Qué te interesa más?</label>
+        <select style="width:100%;padding:14px 16px;border:2px solid var(--line);border-radius:12px;font-size:1rem">
+          <option value="">Selecciona tus intereses</option>
+          <option value="recetas">Recetas y tips de cocina</option>
+          <option value="ofertas">Ofertas y promociones</option>
+          <option value="novedades">Nuevos productos</option>
+          <option value="eventos">Eventos especiales</option>
+          <option value="todo">¡Todo lo anterior!</option>
+        </select>
+      </div>
+      <button type="submit" class="btn">🎁 Suscribirme y Recibir Regalo</button>
+    </form>
+    <div id="successMessage" class="success-message">
+      <h3>¡Bienvenido a la familia La Nonna! 🎉</h3>
+      <p>Hemos enviado un correo de confirmación y tu receta especial de la Nonna.</p>
+    </div>
+  </div>
+
+  <div class="benefits-section">
+    <h2>Lo que Recibirás</h2>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="benefit-icon">🍝</div>
+        <h3>Recetas Exclusivas</h3>
+        <p>Accede a recetas secretas de la familia que no encontrarás en ningún otro lugar.</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">💰</div>
+        <h3>Ofertas Especiales</h3>
+        <p>Descuentos exclusivos para suscriptores y primeras oportunidades en promociones.</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">⭐</div>
+        <h3>Contenido Premium</h3>
+        <p>Tips de cocina, historias de la tradición italiana y mucho más.</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🎁</div>
+        <h3>Regalo de Bienvenida</h3>
+        <p>Recibe inmediatamente nuestra receta especial de salsa pomodoro de la Nonna.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
-<footer>© 2025 La Nonna</footer>
+<footer>
+  © 2025 La Nonna · Tradición italiana en cada plato · Todos los derechos reservados
+</footer>
+
+<script>
+document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const formData = new FormData(this);
+  const subscriber = {
+    name: formData.get('name'),
+    email: formData.get('email'),
+    interests: formData.get('interests'),
+    subscribeDate: new Date().toLocaleDateString()
+  };
+  
+  localStorage.setItem('newsletterSubscriber', JSON.stringify(subscriber));
+  
+  document.getElementById('successMessage').style.display = 'block';
+  this.reset();
+  
+  setTimeout(() => {
+    document.getElementById('successMessage').style.display = 'none';
+  }, 5000);
+});
+</script>
 </body>
 </html>
 
